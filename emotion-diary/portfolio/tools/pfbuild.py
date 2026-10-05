@@ -23,17 +23,17 @@ assert n==13,n
 a='2026.06 – 2026.09'; assert src[1].count(a)==1; src[1]=src[1].replace(a,'2026.06 – 2026.10')
 a='데스크 리서치 · 문제 정의 · IA · 기능 구조 설계 · 프로토타입'; assert src[1].count(a)==1
 src[1]=src[1].replace(a,'데스크 리서치 · 문제 정의 · IA · 기능 구조 설계 · 프로토타입 · 디자인 시스템 · 사용성 테스트 설계')
-new={k:open(f'pf/s{k}.html').read() for k in ('11c',12,13)}
+new={k:open(f'pf/s{k}.html').read() for k in ('11d',12,13)}
 order=[('01 인트로',src[1]),('02 배경',src[2]),('03 리서치 · 문제 정의',src[3]),('04 시장조사',src[4]),('05 컨셉모델',src[5]),('06 IA · 기능 구조',src[6]),
-       ('07 디자인 시스템',new['11c']),('08 HOME',src[7]),('09 CREATE',src[8]),('10 CREATE · Variations',src[9]),('11 ARCHIVE',src[10]),
+       ('07 디자인 시스템',new['11d']),('08 HOME',src[7]),('09 CREATE',src[8]),('10 CREATE · Variations',src[9]),('11 ARCHIVE',src[10]),
        ('12 품질 · 접근성',new[12]),('13 사용성 테스트 설계',new[13])]
 body=''.join(f'<section class="s"><div class="lbl">{l}</div><div class="frame"><iframe srcdoc="{html.escape(d,quote=True)}"{tail_attr}</iframe></div></section>' for l,d in order)
 start=t.find(secs[0][0]); end=t.find(secs[-1][0])+len(secs[-1][0])
 out=t[:start]+body+t[end:]
-out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v71</title>',1)
+out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v72</title>',1)
 old_hdr=re.search(r'<header>.*?</header>',out,re.S).group(0)
 toc=' · '.join(l for l,_ in order)
-new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v71</span></h1><p>'+toc+'</p></header>'
+new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v72</span></h1><p>'+toc+'</p></header>'
 out=out.replace(old_hdr,new_hdr,1)
-open('감정로그_포트폴리오_v71.html','w').write(out)
+open('감정로그_포트폴리오_v72.html','w').write(out)
 print('sections',out.count('<section class="s">'),'size MB',round(len(out)/1e6,2))

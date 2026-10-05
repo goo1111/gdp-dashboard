@@ -188,3 +188,38 @@ sC=slide('감정로그 · Design System','Develop · Design System','감정이 �
  '흩어진 색 984종 · 글자 크기 65종을 <b>토큰과 텍스트 스타일로 정리</b>하고, 화면마다 따로 만들던 요소를 <b>프로퍼티를 가진 컴포넌트</b>로 묶었습니다.',bodyC,
  'Figma에서 <b>Style=Primary, Size=Large</b>를 고르면 코드는 <b>&lt;Button variant="primary" size="lg" /&gt;</b>, 색은 <b>var(--color-…)</b>로 그대로 이어집니다.',cssC)
 open('s11c.html','w').write(sC);print('merged ok')
+
+# ================= Clean single slide =================
+emoStrip=''.join(f'<div class="es"><i style="background:{f}"></i><small>{l}</small></div>' for k,l,f,t,b,x in EM)
+neuStrip=''.join(f'<i style="background:{h}"></i>' for n,h in NEU)
+cssD=cssB+'''.panel{margin-top:30px;height:458px;border-radius:20px;background:#fff;box-shadow:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);display:grid;grid-template-columns:1.15fr 1fr 1fr}
+.pc{padding:30px 34px;border-left:1px solid var(--line)}.pc:first-child{border-left:0}
+.pc h4{font-size:16px;font-weight:700;letter-spacing:-.03em;margin-bottom:22px}
+.it+.it{margin-top:26px}
+.it>small{display:block;font-size:12.5px;font-weight:600;color:var(--ink3);margin-bottom:10px;letter-spacing:0}
+.font{font-size:44px;font-weight:700;letter-spacing:-.05em;line-height:1}
+.wts{display:flex;gap:16px;margin-top:10px;font-size:13px;color:var(--ink2)}
+.estrip{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.es i{display:block;height:44px;border-radius:8px}.es small{display:block;margin-top:6px;font-size:11.5px;color:var(--ink2);text-align:center;font-weight:500}
+.nstrip{display:grid;grid-template-columns:repeat(10,1fr);height:28px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}.nstrip i{display:block}
+.row{gap:8px}
+.bt{min-width:92px}
+.nv{height:56px}'''
+bodyD=f'''<div class="panel">
+<div class="pc"><h4>Foundation</h4>
+<div class="it"><small>Typography</small><div class="font">Pretendard</div><div class="wts"><b>Bold</b><span style="font-weight:600">SemiBold</span><span>Regular</span><span style="color:var(--ink3)">· 최소 12px</span></div></div>
+<div class="it"><small>Emotion Color</small><div class="estrip">{emoStrip}</div></div>
+<div class="it"><small>Grayscale</small><div class="nstrip">{neuStrip}</div></div></div>
+<div class="pc"><h4>Components</h4>
+<div class="it"><small>Button</small><div class="row">{btn('S','L',label='이전')}{btn('P','L')}</div><div class="row" style="margin-top:8px">{btn('S','M',label='이전')}{btn('P','M')}</div></div>
+<div class="it"><small>Emotion Chip</small><div class="row">{chip('angry','화난',False)}{chip('angry','짜증난',True)}{chip('angry','답답한',True)}</div></div>
+<div class="it"><small>Day Cell</small><div class="row" style="gap:6px">{day(1,'complex')}{day(2)}{day(3,'flutter')}{day(4,'anxious')}{day(5,'angry',sel=True)}{day(6,today=True)}</div></div></div>
+<div class="pc"><h4>&nbsp;</h4>
+<div class="it"><small>Bottom Navigation</small>{nav(0)}</div>
+<div class="it"><small>Tabs</small><div class="sg2"><span>일간</span><span class="on">주간</span><span>월간</span></div><div class="ul" style="margin-top:10px"><span class="on">감정 리포트</span><span>나의 창작물</span></div></div>
+<div class="it"><small>Card</small><div class="rc2"><div>화남 · 짜증난<small>오늘</small></div><p>회의가 길어져서 짜증이 났다.</p></div></div></div>
+</div>'''
+sD=slide('감정로그 · Design System','Develop · Design System','감정이 어느 화면에서나 <em>같은 색, 같은 규격</em>으로 보이도록 디자인 시스템을 세웠습니다.',
+ '흩어진 색과 글자 크기를 토큰으로 정리하고, 화면마다 따로 만들던 요소를 <b>컴포넌트로 묶었습니다.</b>',bodyD,
+ 'Figma의 변수와 프로퍼티를 <b>코드의 CSS 변수 · props와 같은 이름</b>으로 맞춰, 한쪽을 고치면 다른 쪽도 그대로 따라옵니다.',cssD)
+open('s11d.html','w').write(sD);print('clean ok')
