@@ -26,18 +26,37 @@ src[1]=src[1].replace(a,'데스크 리서치 · 문제 정의 · IA · 기능 �
 # --- no problem tags on any slide
 import re as _re
 for k in src: src[k]=_re.sub(r'<span class="eb2">[^<]*</span>','',src[k])
-new={k:open(f'pf/s{k}.html').read() for k in ('11g',12,13)}
+# --- conclusion bars: INSIGHT, same position on 03-06 (+ new slides); period wording
+BAR='.opp{position:absolute;left:88px;right:88px;bottom:44px;height:56px;border-radius:12px;background:#efecfa;border:1px solid #e3def6;display:flex;align-items:center;padding:0 28px;gap:18px;font-size:16px;font-weight:600;color:var(--ink);margin:0}.opp em{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.06em;color:#5a4ab3!important}.opp b{color:#5a4ab3}.slide .opp span{font-size:16px;font-weight:600;color:var(--ink)}.slide .opp{font-size:16px;margin:0}'
+def bar(k,html_):
+    src[k]=src[k].replace('</style>',BAR+'</style>',1)
+    if html_: 
+        assert src[k].count('</section>')==1; src[k]=src[k].replace('</section>',html_+'</section>')
+a='<div class="kp"><em>KEY PROBLEM</em>'; assert src[3].count(a)==1; src[3]=src[3].replace(a,'<div class="opp"><em>INSIGHT</em>'); bar(3,'')
+a='<div class="opp"><em>INSIGHT</em>입력 · 축적 · 보상을 하나로 잇는 \'감정 창작 구조\'를 제안합니다.</div>'; assert src[4].count(a)==1
+src[4]=src[4].replace(a,'<div class="opp"><em>INSIGHT</em><span>입력 · 축적 · 보상을 하나로 잇는 <b>\'감정 창작 구조\'</b>를 제안합니다.</span></div>'); bar(4,'')
+# 04: bar was nested inside .cz (unclosed div) -> move it to section level
+_m=_re.search(r'\s*<div class="opp"><em>INSIGHT</em><span>입력.*?</span></div>',src[4],_re.S); _b=_m.group(0)
+src[4]=src[4].replace(_b,'',1); src[4]=src[4].replace('</section>',_b+'</section>',1)
+# 05/06: lift and shrink diagrams slightly so the bar does not touch them
+src[5]=src[5].replace('</style>','.cz{transform:translateY(-22px) scale(.94);transform-origin:720px 202px}</style>',1)
+src[6]=src[6].replace('</style>','.cz{transform:translateY(-16px) scale(.97);transform-origin:720px 200px}</style>',1)
+bar(5,'<div class="opp"><em>INSIGHT</em><span>사용자는 <b>고르기만</b> 하고, 흐름 정리와 창작은 감정로그가 맡아 기록의 부담을 줄였습니다.</span></div>')
+bar(6,'<div class="opp"><em>INSIGHT</em><span><b>기록 → 창작 → 아카이브</b> 흐름 하나만 깊게 만들고, 나머지는 형태만 구현했습니다.</span></div>')
+a='2인 · 4개월'; assert src[6].count(a)==1; src[6]=src[6].replace(a,'2인 · 5개월')
+a='>팀 프로젝트<'; assert src[1].count(a)==1; src[1]=src[1].replace(a,'>팀 프로젝트 (2인)<')
+new={k:open(f'pf/s{k}.html').read() for k in ('11g','13v')}
 order=[('01 인트로',src[1]),('02 배경',src[2]),('03 리서치 · 문제 정의',src[3]),('04 시장조사',src[4]),('05 컨셉모델',src[5]),('06 IA · 기능 구조',src[6]),
        ('07 HOME',src[7]),('08 CREATE',src[8]),('09 CREATE · Variations',src[9]),('10 ARCHIVE',src[10]),
        ('11 디자인 시스템',new['11g'].replace('Develop · Design System','Deliver · Design System')),
-       ('12 품질 · 접근성',new[12]),('13 사용성 테스트 설계',new[13])]
+       ('12 검증 계획 · 다음 단계',new['13v'])]
 body=''.join(f'<section class="s"><div class="lbl">{l}</div><div class="frame"><iframe srcdoc="{html.escape(d,quote=True)}"{tail_attr}</iframe></div></section>' for l,d in order)
 start=t.find(secs[0][0]); end=t.find(secs[-1][0])+len(secs[-1][0])
 out=t[:start]+body+t[end:]
-out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v78</title>',1)
+out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v79</title>',1)
 old_hdr=re.search(r'<header>.*?</header>',out,re.S).group(0)
 toc=' · '.join(l for l,_ in order)
-new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v78</span></h1><p>'+toc+'</p></header>'
+new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v79</span></h1><p>'+toc+'</p></header>'
 out=out.replace(old_hdr,new_hdr,1)
-open('감정로그_포트폴리오_v78.html','w').write(out)
+open('감정로그_포트폴리오_v79.html','w').write(out)
 print('sections',out.count('<section class="s">'),'size MB',round(len(out)/1e6,2))
