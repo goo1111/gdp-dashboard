@@ -342,3 +342,52 @@ sF=slide('감정로그 · Design System','Develop · Design System','색 하나�
  'Primitive 54 → Semantic 59 → Component 4. Figma 변수 147개와 CSS 변수 이름을 1:1로 맞추고, Figma 컴포넌트에는 hex를 직접 쓰지 않았습니다.',bodyF,
  '감정색은 기록, 차콜은 누르는 것 — 색의 의미를 고정해 글보다 먼저 그날의 감정이 읽히게 했습니다.',cssF)
 open('s11f.html','w').write(sF);print('F ok')
+
+# ================= G: reference structure (Type+Spacing / Color / Components) =================
+spG=''.join(f'<div class="sp"><i style="width:{v*.9}px;height:{v*.9}px"></i><small>{v}</small></div>' for v in [2,4,8,12,16,20,24,32,40,48])
+raG=''.join(f'<div class="ra"><i style="border-radius:{min(v,22)}px"></i><small>{lab}</small></div>' for v,lab in [(8,'8 · 태그'),(12,'12 · 칩'),(16,'16 · 카드'),(20,'20 · 버튼'),(999,'full · 토글')])
+tiles=[('#e66f5c','#ffeae6','#a23b32','감정 8색','그날의 감정'),('#ffeae6','#fff5f2','#a23b32','감정 tint','기록한 날'),('#2b2733','#f1f0f3','#2b2733','차콜','누르는 것'),('#6f6964','#f3f0eb','#5f5a56','웜 그레이','보조 정보'),('#faf9f4','#fbfaf7','#5f5a56','아이보리','바탕')]
+tlG=''.join(f'<div class="tl" style="background:{bg}"><i style="background:{f};box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:{x}">{n}</b><small>{m}</small></div>' for f,bg,x,n,m in tiles)
+emoRamp=''.join(f'<span style="background:{f}"><small>{l}</small></span>' for k,l,f,t,b,x in EM)
+coral=[('50','#ffeae6','tint · 배경','#a23b32'),('400','#e66f5c','fill · 점','#fff'),('600','#c8493d','border · 선','#fff'),('800','#a23b32','text · 5.7:1','#fff')]
+crRamp=''.join(f'<span style="background:{h};color:{c}"><small>{n}</small><small>{r}</small></span>' for n,h,r,c in coral)
+neuR=[('950','#2b2733','13.8:1','#fff'),('900','#1c1a18','16.5:1','#fff'),('600','#5f5a56','6.5:1','#fff'),('500','#6f6964','5.1:1','#fff'),('400','#a39b95','장식','#fff'),('200','#e4dfda','테두리','#5f5a56')]
+neRamp=''.join(f'<span style="background:{h};color:{c}"><small>{n}</small><small>{r}</small></span>' for n,h,r,c in neuR)
+cssG=cssF+'''.gg{margin-top:28px;display:grid;grid-template-columns:1fr 1.14fr 1.08fr;gap:18px;height:478px}
+.cdf{padding:22px 24px}.cdf h4{margin-bottom:12px}
+.font{font-size:38px;margin-bottom:10px}.ts{padding:4px 0}
+.sps{display:flex;align-items:flex-end;gap:7px;height:52px}.sp{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}
+.sp i{display:block;background:#d9d3f1;border-radius:3px;min-width:2px;min-height:2px}.sp small,.ra small{font-size:10.5px;color:var(--ink3);font-weight:600;letter-spacing:0;white-space:nowrap}
+.ras{display:flex;gap:8px;margin-top:14px}.ra{display:flex;flex-direction:column;align-items:center;gap:4px}.ra i{display:block;width:52px;height:30px;background:#f1eefc;border:1.5px solid #b3a8e8}
+.nt{font-size:11.5px;color:var(--ink3);margin-top:8px;letter-spacing:0}
+.tls{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tl{border-radius:12px;padding:10px 9px}
+.tl i{display:block;width:20px;height:20px;border-radius:6px;margin-bottom:8px}.tl b{display:block;font-size:13px;font-weight:700;letter-spacing:-.03em}.tl small{font-size:11px;color:var(--ink2);letter-spacing:0}
+.cap{margin:12px 0}
+.stage.v{flex-direction:column;align-items:stretch;justify-content:space-around;gap:0;padding:14px 16px}
+.rl{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:6px;letter-spacing:0}.rl small{font-weight:500;color:var(--ink3);margin-left:4px}
+.ramp{display:flex;height:40px;border-radius:10px;overflow:hidden}.ramp span{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 5px 7px;font-size:10px;font-weight:700;line-height:1.2}
+.ramp small{font-size:10px;letter-spacing:0}.ramp.e span{color:#fff;text-shadow:0 0 2px rgba(0,0,0,.25)}
+.inp{border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px #e4dfda;color:var(--ink)}.inp small{display:block;text-align:right;font-size:10.5px;color:var(--ink3);margin-top:2px}
+.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bgrid .bt{height:44px;border-radius:20px;font-size:14px;min-width:0}
+.ins{display:grid;grid-template-columns:1fr 1fr;gap:8px}.inp{font-size:12px;padding:9px 11px}.inp.ph{color:#a39b95}.inp.ph small{visibility:hidden}
+.cts{display:flex;align-items:center;gap:6px}.cts .ch{height:32px;font-size:12px;padding:0 10px}.cts .tg{flex:none}
+.dcs{display:flex;gap:6px;align-items:center}'''
+bodyG=f'''<div class="gg">
+<div class="stack"><div class="cdf"><h4>Typography</h4><div class="font">Pretendard</div>{tsF}</div>
+<div class="cdf"><h4>Spacing · Radius</h4><div class="sps">{spG}</div><div class="nt">4 · 8 기준 10단계 · padding · margin · gap 1,970곳을 토큰으로</div>
+<div class="ras">{raG}</div></div></div>
+<div class="cdf"><h4>Color</h4><div class="tls">{tlG}</div>
+<p class="cap">색마다 맡는 역할은 하나 — 글보다 색으로 먼저 그날의 감정을 읽습니다.</p>
+<div class="stage v"><div><div class="rl">Emotion<small>감정 8색 · fill</small></div><div class="ramp e">{emoRamp}</div></div>
+<div><div class="rl">Coral<small>화남 한 감정의 4가지 역할</small></div><div class="ramp">{crRamp}</div></div>
+<div><div class="rl">Neutral<small>글자 대비 (캔버스 위)</small></div><div class="ramp">{neRamp}</div></div></div></div>
+<div class="cdf"><h4>Components</h4><div class="bgrid">{btn('P','L',label='저장하기')}{btn('S','L',label='이전')}{btn('P','M',label='기록하기')}{btn('P','L',dis=True,label='다음')}</div>
+<p class="cap">기본 · 보조 · 비활성 × L 48 / M 40 — 상태는 토큰으로만 바뀝니다.</p>
+<div class="stage v"><div><div class="rl">Input<small>빈 칸 / 입력 중</small></div><div class="ins"><div class="inp ph">오늘을 한 문장으로<small>0 / 100</small></div><div class="inp">회의가 길어져서…<small>16 / 100</small></div></div></div>
+<div><div class="rl">Chip · Toggle</div><div class="cts">{chip('angry','짜증난',True)}{chip('angry','화난',False)}<span class="tg on"></span><span class="tg"></span></div></div>
+<div><div class="rl">Day Cell<small>기록한 날 · 선택 · 빈 날</small></div><div class="dcs">{day(2,'calm')}{day(3,'flutter')}{day(4,'anxious')}{day(5,'angry',sel=True)}{day(6)}{day(7)}</div></div></div></div>
+</div>'''
+sG=slide('감정로그 · Design System','Develop · Design System','색 하나에 <em>감정 하나</em>, 토큰과 컴포넌트로 화면 전체를 묶었습니다.',
+ 'Primitive 54 → Semantic 59 → Component 4. Figma 변수 147개와 CSS 변수 이름을 1:1로 맞추고, Figma 컴포넌트에는 hex를 직접 쓰지 않았습니다.',bodyG,
+ '감정색은 기록, 차콜은 누르는 것 — 색의 의미를 고정해 글보다 먼저 그날의 감정이 읽히게 했습니다.',cssG)
+open('s11g.html','w').write(sG);print('G ok')
