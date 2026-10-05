@@ -223,3 +223,68 @@ sD=slide('감정로그 · Design System','Develop · Design System','감정이 �
  '흩어진 색과 글자 크기를 토큰으로 정리하고, 화면마다 따로 만들던 요소를 <b>컴포넌트로 묶었습니다.</b>',bodyD,
  'Figma의 변수와 프로퍼티를 <b>코드의 CSS 변수 · props와 같은 이름</b>으로 맞춰, 한쪽을 고치면 다른 쪽도 그대로 따라옵니다.',cssD)
 open('s11d.html','w').write(sD);print('clean ok')
+
+# ================= E: Foundation / Token · Mode / Components =================
+tsty=[('title/lg','24 Bold',24,700,'짜증난 마음에 있어요'),('title/md','20 Bold',20,700,'어떤 감정을 남길까요?'),('body/lg','16 Regular',16,400,'회의가 길어져서 짜증이 났다.'),
+      ('label/md','13 Bold',13,700,'화남 · 짜증난'),('caption/sm','12 SemiBold',12,600,'10월 5일 월요일')]
+tsE=''.join(f'<div class="ts"><span style="font-size:{px}px;font-weight:{w}">{s}</span><em>{z}</em></div>' for n,z,px,w,s in tsty)
+keyc=[('#2b2733','action/primary','주요 버튼 · 선택','흰 글자 14.6:1'),('#6f6964','text/tertiary','보조 글자','캔버스 위 5.1:1'),('#a23b32','emotion/*/text','감정 글자 8종','tint 위 4.8~5.7:1')]
+kcE=''.join(f'<div class="kc"><i style="background:{h}"></i><div><b>{n}</b><span>{r}</span></div><em>{c}</em></div>' for h,n,r,c in keyc)
+def modecard(k,word,sent):
+    _,l,f,t,b,x=em(k)
+    return f'''<div class="mc"><div class="mh"><span class="ch" style="background:{t};border-color:{b};color:{x}"><i style="background:{f}"></i>{word}</span><span class="dc" style="background:{t}"><b style="font-weight:700">5</b><s style="background:{f}"></s></span></div>
+<div class="rc2 m" style="--bar:{f}"><div>{l} · {word}<small>오늘</small></div><p>{sent}</p></div><code>emotion = {k}</code></div>'''
+cssE=cssD+'''.panel{grid-template-columns:1fr 1fr 1.08fr;height:492px;margin-top:22px}
+.pc{padding:22px 26px}.pc h4{margin-bottom:12px;display:flex;align-items:baseline;gap:8px}.pc h4 small{font-size:12px;font-weight:500;color:var(--ink3);letter-spacing:0}
+.it+.it{margin-top:16px}.it>small{margin-bottom:7px}
+.pc em,.pc small,.pc code,.tflow{letter-spacing:0}
+.ts{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:3px 0;border-bottom:1px solid var(--line);white-space:nowrap}.ts:last-child{border-bottom:0}
+.ts span{color:var(--ink);letter-spacing:-.03em;overflow:hidden;text-overflow:ellipsis}.ts em{font-style:normal;font-size:11px;color:var(--ink3);flex:none}
+.estrip{gap:3px}.es i{height:22px;border-radius:6px}.es small{font-size:11px;margin-top:4px}
+.kc{display:grid;grid-template-columns:18px 1fr auto;align-items:center;gap:10px;padding:3px 0}.kc i{width:18px;height:18px;border-radius:6px}
+.kc b{display:block;font-size:12px;font-weight:700;font-family:ui-monospace,monospace;letter-spacing:-.02em}.kc span{font-size:11px;color:var(--ink3);margin-left:6px}.kc div{display:flex;align-items:baseline}.kc em{font-style:normal;font-size:11.5px;font-weight:700;color:#5a4ab3;background:#efecfa;border-radius:999px;padding:2px 8px}
+.tier{display:grid;grid-template-columns:1fr 14px 1fr 14px 1fr;align-items:center;text-align:center}
+.tier div{border-radius:12px;background:#fbfaf8;box-shadow:inset 0 0 0 1px var(--line);padding:9px 4px}.tier b{display:block;font-size:22px;font-weight:700;letter-spacing:-.03em}.tier small{font-size:11px;color:var(--ink3);font-weight:600}
+.tier>i{font-style:normal;color:var(--ink4);font-size:12px}
+.tflow{margin-top:8px;font-size:11px;color:var(--ink3)}.tflow code{font-size:10.5px}
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mc{border-radius:12px;background:#fbfaf8;box-shadow:inset 0 0 0 1px var(--line);padding:9px}
+.mh{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}.mh .ch{height:30px;font-size:12px;padding:0 10px}.mh .dc{width:32px;height:32px}
+.rc2.m{padding:8px 10px 8px 16px}.rc2.m:before{background:var(--bar)}.rc2.m div{font-size:12px}.rc2.m p{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mc code{display:block;margin-top:4px;font-size:10.5px;color:var(--ink3);background:none;padding:0;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}.stats div{border-radius:10px;background:#fbfaf8;box-shadow:inset 0 0 0 1px var(--line);padding:7px 2px}
+.stats b{display:block;font-size:18px;font-weight:700;letter-spacing:-.03em}.stats small{font-size:10.5px;color:var(--ink3);font-weight:600}
+.note{margin-top:7px;font-size:11px;color:var(--ink3);line-height:1.45}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:14px 14px}.cg .it{margin:0}.cg .full{grid-column:1/-1}
+.cg .bt{min-width:0;padding:0 14px;height:40px;font-size:13.5px;border-radius:16px}
+.inp{border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px #e4dfda;padding:9px 12px;font-size:13px;color:var(--ink)}.inp small{display:block;text-align:right;font-size:11px;color:var(--ink3);margin-top:2px}
+.hero{border-radius:16px;padding:12px 14px;background:linear-gradient(135deg,#ffd9cf,#f6a395);font-size:15px;font-weight:700;letter-spacing:-.03em;line-height:1.35;color:#1c1a18}.hero em{font-style:normal;color:#a23b32}
+.sheet{border-radius:16px 16px 0 0;background:#fff;box-shadow:0 0 0 1px var(--line),0 -6px 16px -10px rgba(0,0,0,.2);padding:8px 10px 10px}.sheet:before{content:"";display:block;width:28px;height:3px;border-radius:2px;background:#dedbd8;margin:0 auto 7px}
+.sheet .row{gap:2px;justify-content:space-between}.sheet .ei{width:34px}.sheet .ei i{width:26px;height:26px}.sheet .ei i svg{width:15px;height:15px}.sheet .ei small{font-size:10px}
+.nv{height:50px}'''
+bodyE=f'''<div class="panel">
+<div class="pc"><h4>Foundation<small>글자 · 색의 기준</small></h4>
+<div class="it"><small>Pretendard · 텍스트 스타일 5단계</small>{tsE}</div>
+<div class="it"><small>감정 8색 — 색이 곧 데이터</small><div class="estrip">{emoStrip}</div></div>
+<div class="it"><small>주요 색과 대비</small>{kcE}</div></div>
+<div class="pc"><h4>Token · Mode<small>값 → 역할 → 부품</small></h4>
+<div class="it"><small>3단 구조</small><div class="tier"><div><b>54</b><small>Primitive</small></div><i>→</i><div><b>59</b><small>Semantic</small></div><i>→</i><div><b>4</b><small>Component</small></div></div>
+<div class="tflow"><code>coral/400</code> → <code>emotion/angry/fill</code> → EmotionChip · DayCell</div></div>
+<div class="it"><small>감정 모드 — 같은 컴포넌트, 감정 키만 바꿈</small><div class="mode">{modecard('angry','짜증난','회의가 길어져서 짜증이 났다.')}{modecard('calm','편안한','산책하고 나니 마음이 가라앉았다.')}</div></div>
+<div class="it"><small>Figma 연동</small><div class="stats"><div><b>147</b><small>변수</small></div><div><b>14</b><small>텍스트 스타일</small></div><div><b>3</b><small>이펙트</small></div><div><b>0</b><small>하드코딩</small></div></div>
+<div class="note">하드코딩 0은 Figma 컴포넌트 기준(칠·선 145개 모두 변수). 코드 색상 토큰화는 45%.</div></div></div>
+<div class="pc"><h4>Components<small>v73 프로토타입 실제 부품</small></h4>
+<div class="cg">
+<div class="it full"><small>Button · 기본 · 보조 · 비활성</small><div class="row" style="flex-wrap:nowrap">{btn('P','M',label='저장하기')}{btn('S','M',label='이전')}{btn('P','M',dis=True,label='다음')}</div></div>
+<div class="it"><small>Emotion Chip</small><div class="row">{chip('angry','짜증난',True)}{chip('angry','화난',False)}</div></div>
+<div class="it"><small>Toggle · Day Cell</small><div class="row"><span class="tg on"></span>{day(4,'anxious')}{day(5,'angry',sel=True)}</div></div>
+<div class="it"><small>Input · 오늘의 한 문장</small><div class="inp">회의가 길어져서 짜증이 났다.<small>16 / 100</small></div></div>
+<div class="it"><small>Hero Card</small><div class="hero">오늘의 감정은<br><em>짜증난 마음</em>에 있어요</div></div>
+<div class="it"><small>감정 선택 시트</small><div class="sheet"><div class="row">{emoi('calm')}{emoi('joy')}{emoi('sad')}{emoi('angry',True)}</div></div></div>
+<div class="it"><small>Bottom Tab Bar</small>{nav(0)}</div>
+</div></div>
+</div>'''
+sE=slide('감정로그 · Design System','Develop · Design System','감정이 어느 화면에서나 <em>같은 색, 같은 규격</em>으로 보이도록 디자인 시스템을 세웠습니다.',
+ '<b>Foundation</b>에서 글자와 색의 기준을 정하고, <b>토큰</b>으로 값과 역할을 나눈 뒤, 화면마다 따로 만들던 요소를 <b>컴포넌트</b>로 묶었습니다.',bodyE,
+ '감정 색은 장식이 아니라 <b>데이터</b>입니다. 컴포넌트는 감정 키 하나만 받아 칩 · 달력 · 카드 색을 함께 바꿉니다.',cssE)
+open('s11e.html','w').write(sE);print('E ok')
