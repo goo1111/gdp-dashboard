@@ -83,7 +83,12 @@
   --radius-xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px; --radius-2xl:24px; --radius-full:999px;
 
   /* ---------- 간격 ---------- */
-  --spacing-2xs:2px; --spacing-xs:4px; --spacing-sm:8px; --spacing-md:12px; --spacing-lg:16px; --spacing-xl:20px; --spacing-2xl:24px; --spacing-3xl:32px;
+  --spacing-2xs:2px; --spacing-xs:4px; --spacing-sm:8px; --spacing-md:12px; --spacing-lg:16px; --spacing-xl:20px; --spacing-2xl:24px; --spacing-3xl:32px; --spacing-4xl:40px; --spacing-5xl:48px;
+
+  /* ---------- 크기 ---------- */
+  --size-touch-min:44px;  /* 누를 수 있는 요소의 최소 너비·높이 */
+  --size-button-lg:48px;
+  --size-button-md:40px;
 
   /* ---------- 이펙트 ---------- */
   --shadow-sm:0 1px 3px rgba(28,26,24,.08);
