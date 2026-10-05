@@ -14,6 +14,7 @@
   --primitive-neutral-500:#6f6964;
   --primitive-neutral-600:#5f5a56;
   --primitive-neutral-900:#1c1a18;
+  --primitive-neutral-950:#2b2733;
 
   /* 감정 팔레트: 50=tint · 400=fill · 600=border · 800=text */
   --primitive-rose-50:#fff1f5;   --primitive-rose-400:#f05a8a;   --primitive-rose-600:#d93d6a;   --primitive-rose-800:#972047;
@@ -42,6 +43,7 @@
   --color-bg-subtle:var(--primitive-neutral-100);
   --color-border-default:var(--primitive-neutral-200);
   --color-border-card:var(--primitive-neutral-250);
+  --color-action-primary:var(--primitive-neutral-950);   /* 주요 버튼 배경, 달력 선택 */
 
   --color-emotion-flutter-fill:var(--primitive-rose-400);   --color-emotion-flutter-tint:var(--primitive-rose-50);   --color-emotion-flutter-border:var(--primitive-rose-600);   --color-emotion-flutter-text:var(--primitive-rose-800);
   --color-emotion-calm-fill:var(--primitive-mint-400);      --color-emotion-calm-tint:var(--primitive-mint-50);      --color-emotion-calm-border:var(--primitive-mint-600);      --color-emotion-calm-text:var(--primitive-mint-800);
@@ -79,6 +81,9 @@
 
   /* ---------- 모서리 ---------- */
   --radius-xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px; --radius-2xl:24px; --radius-full:999px;
+
+  /* ---------- 간격 ---------- */
+  --spacing-2xs:2px; --spacing-xs:4px; --spacing-sm:8px; --spacing-md:12px; --spacing-lg:16px; --spacing-xl:20px; --spacing-2xl:24px; --spacing-3xl:32px;
 
   /* ---------- 이펙트 ---------- */
   --shadow-sm:0 1px 3px rgba(28,26,24,.08);
