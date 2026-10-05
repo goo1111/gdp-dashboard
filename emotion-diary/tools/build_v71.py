@@ -208,6 +208,15 @@ old="style:active?{color:item[3],borderColor:item[3],background:EMOTION_TOKENS.a
 n=t.count(old); assert n==2,n
 t=t.replace(old,"style:active?{color:EMOTION_TOKENS.hex(main.target,'text'),borderColor:item[3],background:EMOTION_TOKENS.alpha(item[3],9)}")
 
+# ---------- 10c. 아카이브 주간 탭: 달력에 주간 범위 강조 안 함 ----------
+rep('inRange=t==="report"&&period==="week"&&key>=range[0]&&key<=range[1],','')
+rep('(inRange?"in-range ":"")+(inRange&&key===range[0]?"range-start ":"")+(inRange&&key===range[1]?"range-end ":"")+','')
+assert t.count('inRange')==1  # 남은 1곳은 store API 이름
+n0=t.count('in-range')
+t=re.sub(r'\n[^\n{}<]*\.in-range[^\n{}<]*\{[^{}]*\}','',t)
+stats['in-range rules removed']+=n0-t.count('in-range')
+assert t.count('in-range')==0, t.count('in-range')
+
 # ---------- 11. 남은 흰 카드 규칙의 중립색 토큰화 ----------
 n=t.count('.home-record-v72.emotion-angry{border:1px solid #dedbd8!important;background:#fff!important;')
 assert n==1

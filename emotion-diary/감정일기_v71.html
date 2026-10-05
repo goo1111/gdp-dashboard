@@ -1920,8 +1920,8 @@ K0=function(props){
   for(var blank=0;blank<leading;blank++)calendar.push(h("i",{key:"blank-"+blank,"aria-hidden":"true"}));
   for(var day=1;day<=daysInMonth;day++){
     (function(dayNumber){
-      var key=monthKey+"-"+String(dayNumber).padStart(2,"0"),record=recordMap[key],creations=creationMap[key]||[],active=t==="report"?(period==="day"&&key===selectedKey&&!!record):key===creationFilterKey,inRange=t==="report"&&period==="week"&&key>=range[0]&&key<=range[1],hasTarget=t==="report"?!!record:creations.length>0,color=record?(HOME_COLORS[record.emotion_color]||"#98a2ad"):"#98a2ad";
-      calendar.push(h("button",{key:key,type:"button",className:(hasTarget?"recorded ":"")+(active?"selected ":"")+(inRange?"in-range ":"")+(inRange&&key===range[0]?"range-start ":"")+(inRange&&key===range[1]?"range-end ":"")+(creations.length?"has-creation ":"")+(t==="creations"&&!creations.length?"no-creation ":"")+(key===APP_HOME_DATE_KEY(new Date())?"today":""),style:{"--daycolor":color,"--daytint":(record&&(t==="report"||creations.length))?(HOME_CARD_TINTS[record.emotion_color]||"#f3edf6"):(t==="creations"&&creations.length?"#eeeae3":"transparent")},disabled:t==="creations"&&!creations.length,onClick:function(){chooseDay(dayNumber)},"aria-label":key+(record?" 감정 기록":"")+(creations.length?" 창작물 "+creations.length+"개":""),"aria-pressed":active},h("span",null,dayNumber),(record&&(t==="report"||creations.length))?h("i",{"aria-label":"감정 기록 있음"}):null,creations.length?h("b",{"aria-label":"창작물 "+creations.length+"개"},creations.length):null));
+      var key=monthKey+"-"+String(dayNumber).padStart(2,"0"),record=recordMap[key],creations=creationMap[key]||[],active=t==="report"?(period==="day"&&key===selectedKey&&!!record):key===creationFilterKey,hasTarget=t==="report"?!!record:creations.length>0,color=record?(HOME_COLORS[record.emotion_color]||"#98a2ad"):"#98a2ad";
+      calendar.push(h("button",{key:key,type:"button",className:(hasTarget?"recorded ":"")+(active?"selected ":"")+(creations.length?"has-creation ":"")+(t==="creations"&&!creations.length?"no-creation ":"")+(key===APP_HOME_DATE_KEY(new Date())?"today":""),style:{"--daycolor":color,"--daytint":(record&&(t==="report"||creations.length))?(HOME_CARD_TINTS[record.emotion_color]||"#f3edf6"):(t==="creations"&&creations.length?"#eeeae3":"transparent")},disabled:t==="creations"&&!creations.length,onClick:function(){chooseDay(dayNumber)},"aria-label":key+(record?" 감정 기록":"")+(creations.length?" 창작물 "+creations.length+"개":""),"aria-pressed":active},h("span",null,dayNumber),(record&&(t==="report"||creations.length))?h("i",{"aria-label":"감정 기록 있음"}):null,creations.length?h("b",{"aria-label":"창작물 "+creations.length+"개"},creations.length):null));
     })(day);
   }
   var reportPanel=h("section",{className:"archive-report-panel-v113",style:reportStyle},
@@ -7900,17 +7900,11 @@ linear-gradient(135deg,#f4ded8 0%,#eee4e9 46%,#dce9e3 100%)}
 .home-only-page .home-only-device .my-live-v98{position:relative}
 .home-only-page .home-only-device .my-live-v98 .my-save-button{position:absolute!important;left:20px!important;right:20px!important;bottom:20px!important;width:auto!important;margin:0!important;z-index:5}
 </style><style id="v58-archive">
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range{background:#ECE8F1!important;border-radius:0!important;color:var(--color-text-primary)!important}
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range.range-start{border-radius:13px 0 0 13px!important}
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range.range-end{border-radius:0 13px 13px 0!important}
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range.range-start.range-end{border-radius:var(--radius-md)!important}
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range.recorded>span{font-weight:var(--font-weight-bold)}
 .home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.no-creation{background:transparent!important;color:var(--color-text-tertiary)!important}
 .home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.no-creation>span{font-weight:var(--font-weight-semibold)!important}
 .home-only-page .home-only-device section.archive-live-v97 .archive-dayfilter{margin:0 0 12px!important}
 .home-only-page .my-creation-grid>button.has-emo::after{display:none!important}
 .home-only-page .my-creation-grid>button.has-emo>img{margin-top:0!important}
-.home-only-page .home-only-device section.archive-live-v97 .calendar-days>button.in-range{width:100%!important;justify-self:stretch!important;margin-left:0!important;margin-right:0!important}
 </style><style id="v59-report">
 .home-only-page .rc-flow-v59 .rc-flow-bar-v59{display:flex;align-items:center;gap:10px;margin-top:10px}
 .home-only-page .rc-flow-v59 .rc-flow-bar-v59 em{font-style:normal;font-size:var(--font-size-caption-lg);font-weight:var(--font-weight-bold);color:var(--color-text-primary);white-space:nowrap}
