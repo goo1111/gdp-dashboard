@@ -11,7 +11,7 @@ rep('<title>감정일기 v72</title>', '<title>감정일기 v73</title>', 1)
 
 # ---------- P0: 키보드로 감정 고르기 ----------
 HELPER = '''<script id="a11y-helpers">
-/* 키보드·스크린리더 보조: 시트(대화상자) 열릴 때 첫 버튼으로 포커스, Tab은 시트 안에서만, Esc로 닫고 마음 지도로 복귀 */
+/* 키보드·스크린리더 보조: 시트(대화상자) 열릴 때 첫 버튼으로 포커스, Tab은 시트 안에서만, Esc로 닫고 감정 나침반으로 복귀 */
 window.APP_A11Y={
   focusable:function(root){return [].slice.call(root.querySelectorAll('button:not([disabled]),input,textarea,select,[href],[tabindex]:not([tabindex="-1"])')).filter(function(e){return e.offsetParent!==null})},
   focusFirst:function(el,key){if(!el||el.dataset.focusKey===String(key))return;el.dataset.focusKey=String(key);setTimeout(function(){var f=APP_A11Y.focusable(el);if(f[0])f[0].focus({preventScroll:true})},0)},
@@ -27,10 +27,10 @@ window.APP_A11Y={
 '''
 rep('<script id="emotion-tokens">', HELPER + '<script id="emotion-tokens">', 1)
 
-# 마음 지도: Tab으로 도달, Enter/Space로 목록 시트 열기
+# 감정 나침반: Tab으로 도달, Enter/Space로 목록 시트 열기
 rep("h('div',{className:'app-home-compass-v43',onPointerUp:compassPick},",
     "h('div',{className:'app-home-compass-v43',onPointerUp:compassPick,tabIndex:0,role:'button','aria-haspopup':'dialog',"
-    "'aria-label':step===1?'마음 지도. Enter를 눌러 감정 목록에서 고르기':'세부 감정 지도. Enter를 눌러 목록에서 고르기',"
+    "'aria-label':step===1?'감정 나침반. Enter를 눌러 감정 목록에서 고르기':'세부 감정 나침반. Enter를 눌러 목록에서 고르기',"
     "onKeyDown:function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();setModal(true)}}},", 2)
 
 # 감정 시트: 대화상자 + 포커스 이동 + Esc + 포커스 가두기

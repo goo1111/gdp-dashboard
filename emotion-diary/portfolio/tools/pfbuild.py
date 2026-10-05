@@ -45,18 +45,22 @@ bar(5,'<div class="opp"><em>INSIGHT</em><span>사용자는 <b>고르기만</b> �
 bar(6,'<div class="opp"><em>INSIGHT</em><span><b>기록 → 창작 → 아카이브</b> 흐름 하나만 깊게 만들고, 나머지는 형태만 구현했습니다.</span></div>')
 a='2인 · 4개월'; assert src[6].count(a)==1; src[6]=src[6].replace(a,'2인 · 5개월')
 a='>팀 프로젝트<'; assert src[1].count(a)==1; src[1]=src[1].replace(a,'>팀 프로젝트 (2인)<')
-new={k:open(f'pf/s{k}.html').read() for k in ('11g','13v')}
+# --- terminology: 감정 나침반 (feature), 작품 (one result), 나의 창작물 (collection)
+for k,a,b,n in [(1,'감정 창작물"','감정 작품"',9),(1,'<em>나만의 창작물</em>','<em>나만의 작품</em>',1),
+                (7,'<em>마음의 위치</em>로','<em>감정 나침반</em>으로',1),(7,'마음의 위치를 먼저 찍고','감정 나침반에서 위치를 먼저 찍고',1)]:
+    assert src[k].count(a)==n,(k,a,src[k].count(a)); src[k]=src[k].replace(a,b)
+new={k:open(f'pf/s{k}.html').read() for k in ('11g','13v','14r')}
 order=[('01 인트로',src[1]),('02 배경',src[2]),('03 리서치 · 문제 정의',src[3]),('04 시장조사',src[4]),('05 컨셉모델',src[5]),('06 IA · 기능 구조',src[6]),
        ('07 HOME',src[7]),('08 CREATE',src[8]),('09 CREATE · Variations',src[9]),('10 ARCHIVE',src[10]),
        ('11 디자인 시스템',new['11g'].replace('Develop · Design System','Deliver · Design System')),
-       ('12 검증 계획 · 다음 단계',new['13v'])]
+       ('12 검증 계획 · 다음 단계',new['13v']),('13 회고',new['14r'])]
 body=''.join(f'<section class="s"><div class="lbl">{l}</div><div class="frame"><iframe srcdoc="{html.escape(d,quote=True)}"{tail_attr}</iframe></div></section>' for l,d in order)
 start=t.find(secs[0][0]); end=t.find(secs[-1][0])+len(secs[-1][0])
 out=t[:start]+body+t[end:]
-out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v79</title>',1)
+out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v80</title>',1)
 old_hdr=re.search(r'<header>.*?</header>',out,re.S).group(0)
 toc=' · '.join(l for l,_ in order)
-new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v79</span></h1><p>'+toc+'</p></header>'
+new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v80</span></h1><p>'+toc+'</p></header>'
 out=out.replace(old_hdr,new_hdr,1)
-open('감정로그_포트폴리오_v79.html','w').write(out)
+open('감정로그_포트폴리오_v80.html','w').write(out)
 print('sections',out.count('<section class="s">'),'size MB',round(len(out)/1e6,2))
