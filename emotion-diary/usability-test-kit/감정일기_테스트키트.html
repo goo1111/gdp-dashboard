@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>감정일기 테스트 키트</title>
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--fg:#1f2329;--fg-2:#5f6b7a;--line:#d5dae2;--head:#eef2f7;--accent:#2b2733}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 -apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR','Liberation Sans',Arial,sans-serif;padding:40px 16px 60px}
+.wrap{max-width:720px;margin:0 auto}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.3px}
+.sub{color:var(--fg-2);font-size:13px;margin-bottom:28px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:28px}
+a.card{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+a.card:hover,a.card:focus-visible{border-color:var(--accent);outline:none}
+a.card b{display:block;font-size:16px;margin-bottom:4px}
+a.card span{color:var(--fg-2);font-size:13.5px}
+h2{font-size:16px;margin:24px 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+ol,ul{margin:0;padding-left:22px}
+li{margin-bottom:6px}
+table{width:100%;border-collapse:collapse;background:var(--surface);font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--head)}
+code{background:var(--head);padding:1px 6px;border-radius:5px;font-size:.9em}
+.note{background:var(--head);color:var(--fg-2);font-size:13px;padding:10px 12px;border-radius:8px;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>감정일기 사용성 테스트 키트</h1>
+<div class="sub">프로토타입 v73 · 진행 가이드 v73 · 이 파일과 같은 폴더에 두 파일이 함께 있어야 링크가 열려요</div>
+
+<div class="cards">
+  <a class="card" href="감정일기_v73.html" target="_blank" rel="noopener"><b>프로토타입 열기</b><span>감정일기_v73.html · 참가자가 조작하는 화면</span></a>
+  <a class="card" href="감정일기_사용성테스트_가이드_v73.html" target="_blank" rel="noopener"><b>진행 가이드 열기</b><span>12쪽 · 과업 지시, 대조값, 기록표 · 인쇄·PDF 저장 가능</span></a>
+</div>
+
+<h2>참가자마다 시작 전</h2>
+<ol>
+  <li>브라우저 <b>새 시크릿 창</b>을 열고 <code>감정일기_v73.html</code>을 끌어다 놓아요.</li>
+  <li>첫 화면에 "감정을 기록하고, 나만의 것으로 남겨요"가 보이는지 확인해요.</li>
+  <li>테스트 중에는 <b>새 탭으로 다시 열지 않아요.</b> 새 탭에서 열면 예시 상태로 초기화돼서 남긴 기록이 사라져요. 같은 탭 새로고침은 괜찮아요.</li>
+  <li>화면 녹화·음성 녹음을 시작하고, 가이드 9~10쪽의 참가자 기록표를 준비해요.</li>
+</ol>
+
+<h2>파일 구성</h2>
+<table>
+  <thead><tr><th>파일</th><th>용도</th></tr></thead>
+  <tbody>
+    <tr><td>감정일기_테스트키트.html</td><td>지금 보고 있는 시작 페이지</td></tr>
+    <tr><td>감정일기_v73.html</td><td>테스트용 프로토타입 (모바일 390px, 인터넷 없이도 동작)</td></tr>
+    <tr><td>감정일기_사용성테스트_가이드_v73.html</td><td>진행 가이드 (개요·과업 1~4·사후 인터뷰·기록표·비교표·대조값)</td></tr>
+  </tbody>
+</table>
+<div class="note">가이드의 대조값은 2026.10.5(월) 기준이에요. 프로토타입은 기기의 실제 날짜를 쓰기 때문에, 다른 날 테스트하면 테스트 전날 리허설에서 날짜와 주간 범위를 다시 적어 주세요.</div>
+</div>
+</body>
+</html>
