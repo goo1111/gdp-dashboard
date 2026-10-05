@@ -288,3 +288,57 @@ sE=slide('감정로그 · Design System','Develop · Design System','감정이 �
  '<b>Foundation</b>에서 글자와 색의 기준을 정하고, <b>토큰</b>으로 값과 역할을 나눈 뒤, 화면마다 따로 만들던 요소를 <b>컴포넌트</b>로 묶었습니다.',bodyE,
  '감정 색은 장식이 아니라 <b>데이터</b>입니다. 컴포넌트는 감정 키 하나만 받아 칩 · 달력 · 카드 색을 함께 바꿉니다.',cssE)
 open('s11e.html','w').write(sE);print('E ok')
+
+# ================= F: prioritized, card layout =================
+tsF=''.join(f'<div class="ts"><span style="font-size:{px}px;font-weight:{w}">{s}</span><em>{z}</em></div>' for z,px,w,s in [('Title · 24 / 700',24,700,'짜증난 마음'),('Body · 16 / 400',16,400,'회의가 길어져서 짜증이 났다.'),('Caption · 12 / 600',12,600,'10월 5일 월요일')])
+emoDots=''.join(f'<i style="background:{f}"></i>' for k,l,f,t,b,x in EM)
+colF=f'''<div class="cr"><span class="dots">{emoDots}</span><b>감정 8색</b><span>그날의 감정 · 기록</span></div>
+<div class="cr"><i style="background:#2b2733"></i><b>차콜</b><span>누르는 것 · 선택</span><em>14.6:1</em></div>
+<div class="cr"><i style="background:#6f6964"></i><b>웜 그레이</b><span>보조 정보</span><em>5.1:1</em></div>'''
+def mcF(k,word,sent):
+    _,l,f,t,b,x=em(k)
+    return f'''<div class="mw"><div class="mcf" style="background:{t};box-shadow:inset 0 0 0 1.5px {b}"><small style="color:{x}">10월 5일</small><b style="color:{x}">{l} · {word}</b><p>{sent}</p>
+<div class="mrow"><span class="ch" style="background:#fff;border-color:{b};color:{x}"><i style="background:{f}"></i>{word}</span><span class="dc" style="background:#fff"><b style="font-weight:700">5</b><s style="background:{f}"></s></span></div></div><code style="color:{x}">emotion = {k}</code></div>'''
+week=''.join([day(1,'complex'),day(2,'calm'),day(3,'flutter'),day(4,'anxious'),day(5,'angry',sel=True),day(6),day(7)])
+cssF=cssB+'''body{background:#faf9f4}
+.gf{margin-top:28px;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;height:478px}
+.cdf{background:#fff;border-radius:20px;box-shadow:0 16px 36px -28px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:24px 26px;display:flex;flex-direction:column}
+.cdf h4{font-size:16px;font-weight:700;letter-spacing:-.03em;margin-bottom:14px}
+.stack{display:grid;grid-template-rows:auto 1fr;gap:16px}
+.font{font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:12px}
+.ts{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 0;white-space:nowrap}
+.ts span{letter-spacing:-.03em}.ts em{font-style:normal;font-size:11.5px;color:var(--ink3);font-weight:600;letter-spacing:0}
+.cr{display:grid;grid-template-columns:62px 72px 1fr auto;align-items:center;gap:8px;height:42px;font-size:13px}
+.cr>i{width:26px;height:26px;border-radius:8px}.cr b{font-weight:700}.cr span{color:var(--ink2)}
+.cr em{font-style:normal;font-size:11.5px;font-weight:700;color:#5a4ab3;background:#efecfa;border-radius:999px;padding:2px 8px;letter-spacing:0}
+.dots{display:grid;grid-template-columns:repeat(4,12px);gap:3px}.dots i{width:12px;height:12px;border-radius:50%}
+.tier{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;text-align:center}
+.tier div{border-radius:12px;background:#f5f3fb;padding:9px 4px}.tier small{display:block;font-size:11.5px;color:#5a4ab3;font-weight:700;letter-spacing:0}.tier b{font-size:22px;font-weight:700}
+.tier>i{font-style:normal;color:var(--ink4)}
+.cap{text-align:center;font-size:12.5px;color:var(--ink2);line-height:1.55;margin:14px 0}
+.stage{flex:1;border-radius:16px;background:linear-gradient(180deg,#f6f4fb,#faf9f4);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 16px}
+.mw{text-align:center}.mw code{display:block;margin-top:8px;font-size:11.5px;font-weight:700;background:none;padding:0;letter-spacing:0}
+.mcf{width:186px;border-radius:16px;padding:14px;text-align:left}.mcf small{font-size:11.5px;font-weight:600}.mcf b{display:block;font-size:16px;font-weight:700;margin:2px 0 4px;letter-spacing:-.03em}
+.mcf p{font-size:12px;color:#5f5a56;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mrow{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.mrow .ch{height:30px;font-size:12px;padding:0 10px}.mrow .dc{width:32px;height:32px}
+.brow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.brow .bt{height:48px;border-radius:20px;font-size:15px;min-width:0}
+.crow{display:flex;justify-content:center;gap:6px;margin:14px 0}.crow .ch{height:32px;font-size:12px;padding:0 10px}
+.stage.h{flex-direction:column;gap:12px;padding:18px}
+.hero{width:100%;border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,#ffd9cf,#f6a395)}
+.hero p{font-size:19px;font-weight:700;letter-spacing:-.03em;line-height:1.35;color:#1c1a18}.hero p em{font-style:normal;color:#a23b32}
+.wk{display:flex;justify-content:space-between;margin-top:12px;background:rgba(255,255,255,.7);border-radius:14px;padding:4px}
+.stage.h .nv{width:100%;height:52px}'''
+bodyF=f'''<div class="gf">
+<div class="stack"><div class="cdf"><h4>Typography</h4><div class="font">Pretendard</div>{tsF}</div>
+<div class="cdf"><h4>Color</h4>{colF}</div></div>
+<div class="cdf"><h4>Token · Mode</h4><div class="tier"><div><small>Primitive</small><b>54</b></div><i>→</i><div><small>Semantic</small><b>59</b></div><i>→</i><div><small>Component</small><b>4</b></div></div>
+<p class="cap">같은 카드 · 칩 · 달력 칸을 그대로 쓰고 감정 키만 바꿔,<br>그날의 감정을 색으로 구분합니다.</p>
+<div class="stage">{mcF('angry','짜증난','회의가 길어져서 짜증이 났다.')}{mcF('calm','편안한','산책하고 나니 가라앉았다.')}</div></div>
+<div class="cdf"><h4>Components</h4><div class="brow">{btn('P','L',label='저장하기')}{btn('S','L',label='이전')}</div>
+<div class="crow">{chip('angry','짜증난',True)}{chip('angry','화난',False)}{chip('calm','편안한',True)}{chip('joy','기쁜',False)}</div>
+<div class="stage h"><div class="hero"><p>오늘의 감정은<br><em>짜증난 마음</em>에 있어요</p><div class="wk">{week}</div></div>{nav(0)}</div></div>
+</div>'''
+sF=slide('감정로그 · Design System','Develop · Design System','색 하나에 <em>감정 하나</em>, 토큰과 컴포넌트로 화면 전체를 묶었습니다.',
+ 'Primitive 54 → Semantic 59 → Component 4. Figma 변수 147개와 CSS 변수 이름을 1:1로 맞추고, Figma 컴포넌트에는 hex를 직접 쓰지 않았습니다.',bodyF,
+ '감정색은 기록, 차콜은 누르는 것 — 색의 의미를 고정해 글보다 먼저 그날의 감정이 읽히게 했습니다.',cssF)
+open('s11f.html','w').write(sF);print('F ok')
