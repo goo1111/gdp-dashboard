@@ -137,3 +137,54 @@ sB=slide('감정로그 · Design System · Components','Develop · Design System
  '같은 버튼이 화면마다 높이 3종 · 모서리 3종으로 만들어져 있던 것을 하나로 모았습니다. <b>Figma 프로퍼티는 코드 props와 1:1로 이름을 맞췄습니다.</b>',bodyB,
  'Figma에서 <b>Style=Primary, Size=Large</b>를 고르면, 코드에서는 <b>&lt;Button variant="primary" size="lg" /&gt;</b>가 됩니다.',cssB)
 open('s11a.html','w').write(sA);open('s11b.html','w').write(sB);print('ok')
+
+# ================= Single merged slide =================
+typ2=[('display/lg','32','Bold'),('title/sm','18','Bold'),('body/sm','14','SemiBold'),('caption/sm','12','Regular')]
+trows2=''.join(f'<div class="tr"><code>{n}</code><span style="font-size:{min(int(s),26)}px;font-weight:{tw[w]}">오늘의 마음</span><em>{s} · {w}</em></div>' for n,s,w in typ2)
+emo2=''.join(f'<div class="ec2"><i style="background:{f}"></i><div><b>{l}</b><code>{f}</code></div></div>' for k,l,f,t,b,x in EM)
+neu2=''.join(f'<i style="background:{h}" title="{n}"></i>' for n,h in NEU)
+cssC=cssB+'''.split{margin-top:22px;display:grid;grid-template-columns:500px 1fr;gap:18px;height:468px}
+.font{font-size:40px;font-weight:700;letter-spacing:-.05em;line-height:1.05}
+.fw{display:flex;align-items:flex-end;justify-content:space-between}.wts{display:flex;gap:10px;font-size:12px;color:var(--ink2)}
+.tr{display:grid;grid-template-columns:84px 1fr 84px;align-items:center;height:32px;border-bottom:1px solid var(--line)}.tr:last-child{border-bottom:0}
+.tr code{font-size:10.5px;background:none;padding:0;color:var(--ink3)}.tr span{white-space:nowrap;overflow:hidden}.tr em{font-style:normal;font-size:11px;color:var(--ink3);text-align:right}
+.eg2{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ec2{display:flex;align-items:center;gap:7px;border-radius:10px;background:#fbfaf8;border:1px solid var(--line);padding:6px 8px}
+.ec2 i{width:22px;height:22px;border-radius:6px;flex:none}.ec2 b{display:block;font-size:12px;font-weight:700;line-height:1.2}.ec2 code{font-size:10px;background:none;padding:0;color:var(--ink3)}
+.ng2{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}.ng2 i{display:block;height:20px;border-radius:5px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.ngl{display:flex;justify-content:space-between;font-size:10px;color:var(--ink3);margin-top:3px}
+.flow{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ink2);flex-wrap:wrap}.flow code{font-size:10.5px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;align-items:start}
+.cg .lbl2:first-child,.cg>div>.lbl2:first-child{margin-top:0}
+.bt{min-width:84px;padding:0 14px}
+.ch{height:32px;font-size:12px;padding:0 10px}
+.dc{width:32px;height:32px;font-size:12.5px}
+.nv{height:50px}.nv svg{width:20px;height:20px}
+.sg2{height:36px}.ul{height:30px}'''
+bodyC=f'''<div class="split">
+<div class="cd col"><h4>Foundation<span class="prop">Primitive → Semantic</span></h4>
+<div class="lbl2">Typography<small>Pretendard · 텍스트 스타일 14종 · 최소 12px</small></div>
+<div class="fw"><div class="font">Pretendard</div><div class="wts"><b>Bold</b><span style="font-weight:600">SemiBold</span><span>Regular</span></div></div>
+<div style="margin-top:6px">{trows2}</div>
+<div class="lbl2">Emotion Color<small>감정 8색 · 각각 fill · tint · border · text 4역할</small></div><div class="eg2">{emo2}</div>
+<div class="lbl2">Neutral<small>웜 그레이 10단계</small></div><div class="ng2">{neu2}</div><div class="ngl"><span>0 #ffffff</span><span>500 #6f6964 (보조 글자, 4.5:1)</span><span>950 #2b2733</span></div></div>
+<div class="cd col"><h4>Components<span class="prop">Figma 프로퍼티 = 코드 props</span></h4>
+<div class="cg" style="margin-top:12px">
+<div><div class="lbl2">Button<small>Style × Size × State</small></div>
+<div class="row"><span class="sz">48px</span>{btn('S','L',label='이전')}{btn('P','L')}</div>
+<div class="row" style="margin-top:6px"><span class="sz">40px</span>{btn('S','M',label='이전')}{btn('P','M')}</div>
+<div class="row" style="margin-top:6px"><span class="sz">Off</span>{btn('P','L',True,'저장하기')}<span class="tg on" style="margin-left:6px"></span><span class="tg"></span></div>
+<div class="lbl2">EmotionChip<small>emotion × selected · 최대 3개</small></div>
+<div class="row">{chip('angry','화난',False)}{chip('angry','짜증난',True)}{chip('angry','답답한',True)}</div>
+<div class="lbl2">DayCell<small>emotion · selected · isToday</small></div>
+<div class="row" style="gap:5px">{day(1,'complex')}{day(2)}{day(3,'flutter')}{day(4,'anxious')}{day(5,'angry',sel=True)}{day(6,today=True)}{day(7)}</div></div>
+<div><div class="lbl2">Bottom Navigation<small>Default · Active</small></div>{nav(0)}<div style="height:6px"></div>{nav(2)}
+<div class="lbl2">Tabs<small>segment · underline</small></div>
+<div class="sg2"><span>일간</span><span class="on">주간</span><span>월간</span></div>
+<div class="ul" style="margin-top:6px"><span class="on">감정 리포트</span><span>나의 창작물</span></div>
+<div class="lbl2">Card UI<small>이번 주 기록</small></div><div class="rc2"><div>화남 · 짜증난<small>오늘</small></div><p>회의가 길어져서 짜증이 났다.</p></div></div>
+</div></div></div>'''
+sC=slide('감정로그 · Design System','Develop · Design System','감정이 어느 화면에서나 <em>같은 색 · 같은 규격</em>으로 보이도록 디자인 시스템을 세웠습니다.',
+ '흩어진 색 984종 · 글자 크기 65종을 <b>토큰과 텍스트 스타일로 정리</b>하고, 화면마다 따로 만들던 요소를 <b>프로퍼티를 가진 컴포넌트</b>로 묶었습니다.',bodyC,
+ 'Figma에서 <b>Style=Primary, Size=Large</b>를 고르면 코드는 <b>&lt;Button variant="primary" size="lg" /&gt;</b>, 색은 <b>var(--color-…)</b>로 그대로 이어집니다.',cssC)
+open('s11c.html','w').write(sC);print('merged ok')
