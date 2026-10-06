@@ -65,6 +65,11 @@ src[6]=src[6].replace(a,'<h1><em>기록 → 창작 → 아카이브</em> 한 흐
 src[9]=src[9].replace('</style>','.slide .th figcaption,.slide .sp small,.slide .nt,.slide .sum div span{font-size:13px}</style>',1)
 a='한 달의 감정을 돌아보고, 마음에 든 작품은 <em>굿즈로 미리 봅니다</em>.'; assert src[10].count(a)==1
 src[10]=src[10].replace(a,'한 달의 <em>감정 흐름</em>을 돌아보고, 마음에 든 작품은 굿즈로 이어 갑니다.')
+# --- layout system: 12-col grid (88 margin, 24 gutter), content 204 -> 686 (bar) / 746 (no bar), card radius 18
+for k,a,b in [(3,'.pn,.chev{height:444px!important}','.pn,.chev{height:452px!important}'),
+              (4,'.board{margin-top:28px!important;height:466px!important}','.board{margin-top:28px!important;height:482px!important;grid-template-columns:1fr 406px!important;column-gap:24px!important}'),
+              (9,'<div class="ph hl" style="left:88px;top:204px;width:220px;height:490px">','<div class="ph hl" style="left:88px;top:231px;width:208px;height:463px">')]:
+    assert src[k].count(a)==1,(k,a,src[k].count(a)); src[k]=src[k].replace(a,b)
 new={k:open(f'pf/s{k}.html').read() for k in ('11g','13v','14r')}
 order=[('01 인트로',src[1]),('02 배경',src[2]),('03 리서치 · 문제 정의',src[3]),('04 시장조사',src[4]),('05 컨셉모델',src[5]),('06 IA · 기능 구조',src[6]),
        ('07 HOME',src[7]),('08 CREATE',src[8]),('09 CREATE · Variations',src[9]),('10 ARCHIVE',src[10]),
@@ -91,10 +96,10 @@ order=[(l,pf_ds(d,FLOOR.get(l,12))) for l,d in order]
 body=''.join(f'<section class="s"><div class="lbl">{l}</div><div class="frame"><iframe srcdoc="{html.escape(d,quote=True)}"{tail_attr}</iframe></div></section>' for l,d in order)
 start=t.find(secs[0][0]); end=t.find(secs[-1][0])+len(secs[-1][0])
 out=t[:start]+body+t[end:]
-out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v82</title>',1)
+out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v83</title>',1)
 old_hdr=re.search(r'<header>.*?</header>',out,re.S).group(0)
 toc=' · '.join(l for l,_ in order)
-new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v82</span></h1><p>'+toc+'</p></header>'
+new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v83</span></h1><p>'+toc+'</p></header>'
 out=out.replace(old_hdr,new_hdr,1)
-open('감정로그_포트폴리오_v82.html','w').write(out)
+open('감정로그_포트폴리오_v83.html','w').write(out)
 print('sections',out.count('<section class="s">'),'size MB',round(len(out)/1e6,2))

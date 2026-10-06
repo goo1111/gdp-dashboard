@@ -7,14 +7,14 @@ mets=[('사용성','2 / 3명','과업 1 · 4를 도움 없이 완료','기록 3�
       ('핵심 가치','2 / 3명','"기존 일기 앱과 다르다"고 답함','기록이 작품으로 남는 경험이 차이로 느껴지는가'),
       ('지속','3.3% ↑','30일 뒤에도 기록하는 사용자','02장의 업계 중앙값보다 높이는 것이 목표')]
 mt=''.join(f'<div class="m"><small>{a}</small><b>{b}</b><p>{c}</p><span>{d}</span></div>' for a,b,c,d in mets)
-css='''.lb{margin-top:34px;font-size:12.5px;font-weight:700;color:#5a4ab3;letter-spacing:.04em}
+css='''.lb{margin-top:28px;font-size:12.5px;font-weight:700;color:#5a4ab3;letter-spacing:.04em}
 .steps{margin-top:10px;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;align-items:center}
-.st{border-radius:16px;background:#fff;box-shadow:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:22px 24px;height:182px}
+.st{border-radius:18px;background:#fff;box-shadow:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:22px 24px;height:182px}
 .sh{display:flex;justify-content:space-between;align-items:center}.sh small{font-size:12px;color:var(--ink3);font-weight:600;letter-spacing:0}
 .st b{display:block;margin:10px 0 6px;font-size:17px;font-weight:700;letter-spacing:-.04em}.st p{font-size:13px;line-height:1.55;color:var(--ink2);font-weight:500}
 .ar{font-style:normal;text-align:center;color:#b3a8e8;font-size:22px;font-weight:700}
-.ms{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.m{border-radius:16px;background:#f8f7fc;border:1px solid #ebe7f6;padding:22px 24px;height:190px}
+.ms{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.m{border-radius:18px;background:#f8f7fc;border:1px solid #ebe7f6;padding:22px 24px;height:216px}
 .m small{font-size:12px;font-weight:700;color:var(--ink3);letter-spacing:0}.m b{display:block;margin-top:6px;font-size:38px;font-weight:700;color:#5a4ab3;letter-spacing:-.04em;line-height:1.1}
 .m p{margin-top:8px;font-size:15px;font-weight:700;color:var(--ink)}.m span{display:block;margin-top:4px;font-size:12.5px;color:var(--ink2);font-weight:500}'''
 body=f'<div class="lb">검증 단계</div><div class="steps">{st}</div><div class="lb" style="margin-top:28px">성공 지표</div><div class="ms">{mt}</div>'

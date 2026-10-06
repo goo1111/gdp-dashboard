@@ -10,15 +10,15 @@ cols=[('KEEP','잘된 점','#5a4ab3',[
  ('TRY','다음에 다르게','#347565',[
   ('먼저','토큰과 컴포넌트를 화면보다 먼저','시스템을 먼저 세우고 화면을 올리겠습니다.'),
   ('초기에','용어 사전을 첫 주에 확정','문구 · 문서 · 코드가 같은 단어를 씁니다.'),
-  ('5명','직접 인터뷰와 테스트를 일정에 고정','인터뷰 5명과 사용성 테스트를 먼저 잡겠습니다.')])]
+  ('5명','직접 인터뷰와 테스트를 일정에 고정','인터뷰와 테스트 일정을 먼저 잡겠습니다.')])]
 def col(tag,name,c,items):
     it=''.join(f'<div class="ri"><b style="color:{c}">{n}</b><div><h5>{h}</h5><p>{p}</p></div></div>' for n,h,p in items)
     return f'<div class="rc"><div class="rh"><span style="color:{c}">{tag}</span><h4>{name}</h4></div>{it}</div>'
-css='''.rg{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.rc{border-radius:18px;background:#fff;box-shadow:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:22px 24px;height:486px}
+css='''.rg{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rc{border-radius:18px;background:#fff;box-shadow:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:22px 24px;height:482px;display:flex;flex-direction:column}
 .rh{display:flex;align-items:baseline;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .rh span{font-size:12px;font-weight:700;letter-spacing:.06em}.rh h4{font-size:18px;font-weight:700;letter-spacing:-.03em}
-.ri{display:grid;grid-template-columns:92px 1fr;gap:12px;padding:30px 0;border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:0}
+.ri{flex:1;align-content:center;display:grid;grid-template-columns:92px 1fr;gap:12px;padding:0;border-bottom:1px solid var(--line)}.ri:last-child{border-bottom:0}
 .ri>b{font-size:18px;font-weight:700;letter-spacing:-.03em;line-height:1.3}
 .ri h5{font-size:16px;font-weight:700;letter-spacing:-.03em}.ri p{margin-top:6px;font-size:14px;line-height:1.55;color:var(--ink2);font-weight:500;word-break:keep-all}'''
 body='<div class="rg">'+''.join(col(*c) for c in cols)+'</div>'

@@ -302,9 +302,9 @@ def mcF(k,word,sent):
 week=''.join([day(1,'complex'),day(2,'calm'),day(3,'flutter'),day(4,'anxious'),day(5,'angry',sel=True),day(6),day(7)])
 cssF=cssB+'''body{background:#faf9f4}
 .gf{margin-top:28px;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;height:478px}
-.cdf{background:#fff;border-radius:20px;box-shadow:0 16px 36px -28px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:24px 26px;display:flex;flex-direction:column}
+.cdf{background:#fff;border-radius:18px;box-shadow:0 16px 36px -28px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:24px 26px;display:flex;flex-direction:column}
 .cdf h4{font-size:16px;font-weight:700;letter-spacing:-.03em;margin-bottom:14px}
-.stack{display:grid;grid-template-rows:auto 1fr;gap:16px}
+.stack{display:grid;grid-template-rows:auto 1fr;gap:24px}
 .font{font-size:40px;font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:12px}
 .ts{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 0;white-space:nowrap}
 .ts span{letter-spacing:-.03em}.ts em{font-style:normal;font-size:11.5px;color:var(--ink3);font-weight:600;letter-spacing:0}
@@ -353,7 +353,7 @@ coral=[('50','#ffeae6','tint · 배경','#a23b32'),('400','#e66f5c','fill · 점
 crRamp=''.join(f'<span style="background:{h};color:{c}"><small>{n}</small><small>{r}</small></span>' for n,h,r,c in coral)
 neuR=[('950','#2b2733','13.8:1','#fff'),('900','#1c1a18','16.5:1','#fff'),('600','#5f5a56','6.5:1','#fff'),('500','#6f6964','5.1:1','#fff'),('400','#a39b95','장식','#fff'),('200','#e4dfda','테두리','#5f5a56')]
 neRamp=''.join(f'<span style="background:{h};color:{c}"><small>{n}</small><small>{r}</small></span>' for n,h,r,c in neuR)
-cssG=cssF+'''.gg{margin-top:28px;display:grid;grid-template-columns:1fr 1.14fr 1.08fr;gap:18px;height:478px}
+cssG=cssF+'''.gg{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;height:482px}
 .cdf{padding:22px 24px}.cdf h4{margin-bottom:12px}
 .font{font-size:38px;margin-bottom:10px}.ts{padding:4px 0}
 .sps{display:flex;align-items:flex-end;gap:7px;height:52px}.sp{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}
