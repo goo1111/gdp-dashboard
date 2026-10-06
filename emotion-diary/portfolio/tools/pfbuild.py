@@ -19,6 +19,11 @@ def swap(d):
     return re.sub(r'<img src="data:image/jpeg;base64,[A-Za-z0-9+/=]+"([^>]*)>',lambda m:r(type('M',(),{'group':lambda s,i:[m.group(0),None,m.group(1)][i]})()),d)
 for k in (7,8,9,10): src[k]=swap(src[k])
 assert n==13,n
+# --- animated key interactions (07 compass taps, 09 style switch) as animated WebP
+for k,alt,fn in [(7,'1단계 마음 위치','07-1'),(9,'결과 화면 스타일 전환','09-1')]:
+    pat=r'<img src="data:image/jpeg;base64,[A-Za-z0-9+/=]+"([^>]*alt="'+re.escape(alt)+r'"[^>]*)>'
+    b=base64.b64encode(open(f'pfanim/{fn}.webp','rb').read()).decode()
+    src[k],c=re.subn(pat,lambda m:f'<img src="data:image/webp;base64,{b}"{m.group(1)}>',src[k]); assert c==1,(k,alt,c)
 # --- intro updates
 a='2026.06 – 2026.09'; assert src[1].count(a)==1; src[1]=src[1].replace(a,'2026.06 – 2026.10')
 a='데스크 리서치 · 문제 정의 · IA · 기능 구조 설계 · 프로토타입'; assert src[1].count(a)==1
@@ -86,10 +91,10 @@ order=[(l,pf_ds(d,FLOOR.get(l,12))) for l,d in order]
 body=''.join(f'<section class="s"><div class="lbl">{l}</div><div class="frame"><iframe srcdoc="{html.escape(d,quote=True)}"{tail_attr}</iframe></div></section>' for l,d in order)
 start=t.find(secs[0][0]); end=t.find(secs[-1][0])+len(secs[-1][0])
 out=t[:start]+body+t[end:]
-out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v81</title>',1)
+out=out.replace('<title>감정로그 포트폴리오 v41</title>','<title>감정로그 포트폴리오 v82</title>',1)
 old_hdr=re.search(r'<header>.*?</header>',out,re.S).group(0)
 toc=' · '.join(l for l,_ in order)
-new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v81</span></h1><p>'+toc+'</p></header>'
+new_hdr='<header><h1>감정로그 포트폴리오 <span style="font-size:14px;color:var(--ink3);font-weight:600">v82</span></h1><p>'+toc+'</p></header>'
 out=out.replace(old_hdr,new_hdr,1)
-open('감정로그_포트폴리오_v81.html','w').write(out)
+open('감정로그_포트폴리오_v82.html','w').write(out)
 print('sections',out.count('<section class="s">'),'size MB',round(len(out)/1e6,2))
