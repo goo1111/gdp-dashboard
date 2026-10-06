@@ -73,6 +73,9 @@ print(path, len(manifest), 'slides', round(len(out) / 1e6, 2), 'MB')
 if PDF:
     pdir = os.path.join(out_dir, 'pdf-pages')
     os.makedirs(pdir, exist_ok=True)
+    for old in os.listdir(pdir):  # 지난 빌드의 장 파일이 남으면 PDF에 섞여 들어가요
+        if re.match(r'^\d+\.(html|pdf)$', old):
+            os.remove(os.path.join(pdir, old))
     for m in manifest:
         open(os.path.join(pdir, m['file']), 'w').write(slide_doc(os.path.join(SRC, 'slides', m['file']), m['font'], pdf=True))
     print(pdir, len(manifest), 'pdf pages')
