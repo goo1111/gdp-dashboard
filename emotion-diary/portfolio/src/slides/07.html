@@ -1,64 +1,48 @@
-<!-- 07 핵심 의사결정 -->
-<title>감정로그 · Key Decision</title>
+<!-- 07 HOME -->
+<title>감정로그 · HOME</title>
 <style>
-.kd{margin-top:28px;display:grid;grid-template-columns:1fr 406px;gap:var(--pf-gutter);height:482px}
-.kc{background:var(--pf-white);border-radius:var(--pf-r-lg);box-shadow:var(--pf-shadow-card);padding:var(--pf-pad-card);display:flex;flex-direction:column}
-.kc h4{font-size:var(--pf-fs-h4);font-weight:700;letter-spacing:-.03em;display:flex;align-items:baseline;gap:8px}
-.kc h4 small{font-size:var(--pf-fs-label);font-weight:600;color:var(--pf-ink4);letter-spacing:0}
-.cmp{margin-top:16px;display:grid;grid-template-columns:132px 1fr 1fr;border-radius:var(--pf-r-md);overflow:hidden;box-shadow:0 0 0 1px var(--pf-line)}
-.cmp>div{padding:17px 14px;border-top:1px solid var(--pf-line);font-size:var(--pf-fs-body);line-height:1.45;color:var(--pf-ink2)}
-.cmp>.hd{border-top:0;font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-ink);background:var(--pf-surface-2)}
-.cmp>.hd.b{background:var(--pf-purple-600);color:var(--pf-white)}
-.cmp>.rl{font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-ink3);background:var(--pf-surface-2)}
-.cmp>.b{background:var(--pf-purple-50)}
-.cmp i{font-style:normal;font-weight:700;margin-right:6px;color:var(--pf-ink4)}
-.cmp .b i{color:var(--pf-purple-700)}
-.cmp b{font-weight:600;color:var(--pf-ink)}
-.ev{margin-top:auto;padding-top:14px;border-top:1px solid var(--pf-line);display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ev div{font-size:var(--pf-fs-caption);line-height:1.5;color:var(--pf-ink2)}
-.ev b{display:block;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-purple-700);letter-spacing:.02em;margin-bottom:3px}
-.ev small{display:block;margin-top:3px;font-size:var(--pf-fs-label);color:var(--pf-ink4)}
-.dec{margin-top:14px;padding:14px 16px;border-radius:var(--pf-r-md);background:var(--pf-purple-100);font-size:var(--pf-fs-body-strong);font-weight:700;line-height:1.45;color:var(--pf-ink)}
-.dec em{font-style:normal;color:var(--pf-purple-700)}
-.sl{margin-top:16px;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-ink3);letter-spacing:.02em}
-.fix{margin-top:10px;display:flex;flex-direction:column;gap:16px}
-.fix div{display:grid;grid-template-columns:22px 1fr;gap:8px;font-size:var(--pf-fs-body);line-height:1.45;color:var(--pf-ink2)}
-.fix span{width:22px;height:22px;border-radius:var(--pf-r-pill);background:var(--pf-purple-100);color:var(--pf-purple-700);font-size:var(--pf-fs-label);font-weight:700;display:flex;align-items:center;justify-content:center}
-.fix b{font-weight:600;color:var(--pf-ink)}
-.vf{margin-top:auto;padding-top:12px;border-top:1px solid var(--pf-line);font-size:var(--pf-fs-caption);line-height:1.5;color:var(--pf-ink2)}
-.vf b{color:var(--pf-purple-700)}
+.src{margin-top:18px}
+.ph{position:absolute;border-radius:var(--pf-r-device);border:4px solid var(--pf-device);background:var(--pf-white);overflow:hidden;box-shadow:var(--pf-shadow-device)}
+.ph img{width:100%;height:100%;display:block;object-fit:cover;object-position:top}
+.ph.hl{border-color:var(--pf-purple-600);box-shadow:var(--pf-shadow-device-hl)}
+.sp{position:absolute;top:204px;text-align:center}
+.sp i{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;font-style:normal;font-size:var(--pf-fs-caption);font-weight:700;background:var(--pf-purple-100);color:var(--pf-purple-700);position:relative;z-index:1;box-shadow:0 0 0 5px var(--pf-bg)}
+.sp i.g{background:var(--pf-white);border:1.5px solid var(--pf-purple-300);color:var(--pf-purple-500);font-size:var(--pf-fs-label)}
+.sp b{display:block;margin-top:8px;font-size:var(--pf-fs-lead);font-weight:700;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}
+.sp small{display:block;margin-top:3px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);white-space:nowrap}
+.sp.on i{background:var(--pf-purple-600);color:var(--pf-white);box-shadow:var(--pf-shadow-ring)}
+.sp.on b{color:var(--pf-purple-700)}
+.dl{position:absolute;top:217px;border-top:1.5px dashed var(--pf-purple-300)}
+.ar{position:absolute;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--pf-purple-350);font-size:var(--pf-fs-h4);font-weight:600}
+.cap{position:absolute;text-align:center;font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2)}
+.cap.on{color:var(--pf-purple-700)}
+.an{position:absolute}
+.an .row{position:absolute;left:0;width:100%}
+.an .row b{display:block;font-size:var(--pf-fs-body-strong);font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.an .row span{display:block;margin-top:3px;font-size:var(--pf-fs-caption);line-height:1.5;font-weight:500;color:var(--ink2);word-break:keep-all}
+.an .row em{font-style:normal;display:inline-block;margin-bottom:5px;padding:1px 7px;border-radius:var(--pf-r-pill);background:var(--pf-purple-500);color:var(--pf-white);font-size:var(--pf-fs-label);font-weight:700}
+.ld{position:absolute;height:1.5px;background:var(--pf-purple-600)}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--pf-white);border:3px solid var(--pf-purple-600);box-shadow:var(--pf-shadow-ring)}
+.bx2{position:absolute;border-radius:var(--pf-r-md);background:var(--pf-white);box-shadow:var(--pf-shadow-float)}
+.slide .nt{position:absolute;margin:0;font-size:var(--pf-fs-caption);line-height:1.5;font-weight:500;color:var(--ink3);word-break:keep-all}
 </style>
 <section class="slide">
-  <div class="eyebrow">Develop · Key Decision</div>
-  <h1>처음엔 낯설어도, 가장 빠르게 고르는 <em>감정 나침반</em>을 유지했습니다.</h1>
-  <p class="sub">새로운 형식에 두 단계 화면이라 처음엔 어려울 수 있었습니다. 그래도 <b>메인 감정과 세부 감정을 빠르게 고르는 데에는 감정 나침반이 가장 적합</b>했습니다.</p>
-  <div class="kd">
-    <div class="kc">
-      <h4>대안 비교<small>○ 유리 · △ 불리 (팀 판단)</small></h4>
-      <div class="cmp">
-        <div class="hd">기준</div><div class="hd">A · 단어 목록에서 고르기</div><div class="hd b">B · 감정 나침반 (선택)</div>
-        <div class="rl">처음 이해하기</div><div><i>○</i>익숙한 목록 형식</div><div class="b"><i>△</i>새로운 형식에 <b>두 단계 화면</b></div>
-        <div class="rl">고르는 속도</div><div><i>△</i>단어를 읽고 찾아야 함</div><div class="b"><i>○</i>위치를 <b>한 번 누르면</b> 감정이 정해짐</div>
-        <div class="rl">세부 감정까지</div><div><i>△</i>단어가 늘수록 목록이 길어짐</div><div class="b"><i>○</i>같은 축에서 <b>좌표로 좁힘</b> (최대 3개)</div>
-        <div class="rl">말로 옮기기 어려울 때</div><div><i>△</i>알맞은 단어를 먼저 떠올려야 함</div><div class="b"><i>○</i>느낌의 <b>위치만</b> 고르면 됨</div>
-      </div>
-      <div class="ev">
-        <div><b>근거 1 · 리뷰</b>"감정이 5가지뿐이라 부족해요." 단순한 선택지에 대한 불만이 반복됨<small>Caldeira, 2017 · 03장</small></div>
-        <div><b>근거 2 · 논문</b>감정을 알아차리고 말로 설명하는 어려움: 20~30대 2.77점, 50~60대 2.51점 (5점 만점, p&lt;.05)<small>권소영 외, 2023 · TAS-20K</small></div>
-      </div>
-    </div>
-    <div class="kc">
-      <h4>결정과 보완</h4>
-      <div class="dec">감정 나침반 유지 — 메인 감정과 세부 감정 좌표를 <em>가장 빠르게</em> 고르는 방법</div>
-      <div class="sl">처음의 어려움은 이렇게 줄였습니다</div>
-      <div class="fix">
-        <div><span>1</span><p>나침반에 <b>축 이름</b>을 표시 (에너지 높음 ↕ 낮음, 불편함 ↔ 편안함)</p></div>
-        <div><span>2</span><p>처음 실행할 때 <b>첫 기록 체험</b>으로 바로 연습</p></div>
-        <div><span>3</span><p>세부 감정도 <b>같은 두 축</b>을 써서 한 번 익히면 그대로</p></div>
-        <div><span>4</span><p>키보드 · 스크린리더는 <b>감정 목록</b>에서 고르기</p></div>
-      </div>
-      <div class="vf"><b>검증</b> · 사용성 테스트 가이드 Q1 "두 축으로 감정 위치를 고르는 방식을 이해하는가" (13장 검증 단계 01)</div>
-    </div>
-  </div>
-  <div class="opp"><em>INSIGHT</em><span>낯섦은 축 이름과 첫 기록 체험으로 줄이고, <b>빠르게 고르는 장점</b>은 그대로 살렸습니다.</span></div>
+  <div class="eyebrow">Deliver · HOME</div>
+  <h1>단어 대신 <em>감정 나침반</em>으로, 몇 번의 터치만에 <em>오늘의 감정</em>을 남깁니다.</h1>
+  <p class="sub">감정 나침반에서 위치를 먼저 찍고 세부 감정으로 좁혀 가며, 글은 한 문장이면 충분합니다. <b>저장하면 오늘의 감정이 홈에 바로 반영됩니다.</b></p>
+<div class="ph hl" style="left:88px;top:284px;width:208px;height:463px"><img src="asset:b44982b33670.webp" alt="1단계 마음 위치"></div>
+<i class="dot" style="left:160px;top:456px"></i>
+<div class="an" style="left:330px;top:0;width:250px;height:810px"><div class="row" style="top:386px"><em>세로축</em><b>에너지 높음 ↕ 낮음</b><span>에너지가 높은지 낮은지 고릅니다.</span></div><div class="row" style="top:476px"><em>가로축</em><b>불편함 ↔ 편안함</b><span>감정이 내게 편한지, 불편한지 고릅니다.</span></div><div class="row" style="top:566px"><em>결과</em><b>위치에 맞는 8가지 감정</b><span>찍은 위치를 바탕으로 감정을 고르고, 세부 감정으로 좁혀 갑니다.</span></div></div>
+<svg style="position:absolute;left:0;top:0;width:1440px;height:810px;pointer-events:none" viewBox="0 0 1440 810"><path d="M175 465H314M314 388V632" fill="none" stroke="#6f5fc9" stroke-width="1.5"/></svg>
+<div class="ph " style="left:632px;top:284px;width:200px;height:445px"><img src="asset:6ec9d7c5a7eb.jpg" alt="2단계 세부 감정"></div>
+<div class="ph " style="left:892px;top:284px;width:200px;height:445px"><img src="asset:85d9e8e91fe7.jpg" alt="3단계 한 문장"></div>
+<div class="ph " style="left:1152px;top:284px;width:200px;height:445px"><img src="asset:6758e0f47561.jpg" alt="저장 후 홈"></div>
+<i class="ar" style="left:595px;top:495px">›</i>
+<i class="ar" style="left:851px;top:495px">›</i>
+<i class="ar" style="left:1111px;top:495px">›</i>
+<i class="dl" style="left:192px;width:1060px"></i>
+<div class="sp on" style="left:72px;width:240px"><i>1</i><b>마음 위치</b><small>단어 대신 위치로 고릅니다</small></div>
+<div class="sp" style="left:622px;width:220px"><i>2</i><b>세부 감정</b><small>섞인 감정은 최대 3개까지</small></div>
+<div class="sp" style="left:882px;width:220px"><i>3</i><b>한 문장</b><small>글은 선택, 한 문장이면 충분</small></div>
+<div class="sp" style="left:1142px;width:220px"><i>4</i><b>홈 반영</b><small>홈 카드 · 이번 주 기록에 반영</small></div>
 </section>

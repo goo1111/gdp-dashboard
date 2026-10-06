@@ -1,5 +1,5 @@
-<!-- 12 디자인 시스템 · pf-lint: app-examples -->
-<title>감정로그 · Design System</title>
+<!-- 12 검증 계획 · 다음 단계 -->
+<title>감정로그 · Next Step</title>
 <style>
 .src{margin-top:18px}
 .cd{border-radius:var(--pf-r-lg);background:var(--pf-white);box-shadow:var(--pf-shadow-card);padding:var(--pf-pad-card)}
@@ -8,143 +8,19 @@
 .k{font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);line-height:1.45;margin-top:4px}
 .chip{display:inline-block;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-purple-700);background:var(--pf-purple-100);border-radius:var(--pf-r-pill);padding:2px 9px;letter-spacing:0}
 code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--pf-fs-label);letter-spacing:0;color:var(--pf-purple-700);background:var(--pf-purple-50);border-radius:var(--pf-r-xs);padding:1px 5px}
-.col h4{font-size:var(--pf-fs-body-strong);font-weight:700;letter-spacing:-.03em;margin-bottom:2px}
-.lbl2{font-size:var(--pf-fs-label);font-weight:600;color:var(--ink3);margin:12px 0 7px;letter-spacing:0}
-.lbl2 small{font-weight:500;color:var(--ink4);margin-left:6px}
-.cd{padding:var(--pf-pad-card)}
-.g3{margin-top:22px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;height:494px}
-.prop{font-size:var(--pf-fs-label);font-weight:600;color:var(--pf-purple-700);background:var(--pf-purple-100);border-radius:999px;padding:1px 8px;margin-left:6px;letter-spacing:0}
-.row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.sz{font-size:var(--pf-fs-label);color:var(--ink3);width:34px;flex:none}
-.bt{display:inline-flex;align-items:center;justify-content:center;border:1px solid;font-weight:700;padding:0 18px;min-width:96px;letter-spacing:-.02em}
-.tg{width:44px;height:26px;border-radius:999px;background:#e4dfda;position:relative;display:inline-block}
-.tg:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:var(--pf-white);box-shadow:0 1px 3px rgba(0,0,0,.15)}
-.tg.on{background:#2b2733}
-.tg.on:after{left:21px}
-.hd{border-radius:12px;background:var(--pf-white);box-shadow:0 0 0 1px var(--line);padding:10px 14px}
-.hd small{display:block;font-size:var(--pf-fs-label);color:var(--ink3);font-weight:600}
-.hd b{font-size:var(--pf-fs-lead);font-weight:700}
-.fh{display:flex;justify-content:space-between;align-items:center;font-size:var(--pf-fs-caption);color:var(--ink2)}
-.ch{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 12px;border:1px solid;border-radius:12px;font-size:var(--pf-fs-caption);font-weight:600}
-.ch i{width:7px;height:7px;border-radius:50%}
-.ei{display:inline-flex;flex-direction:column;align-items:center;gap:3px;width:40px}
-.ei i{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
-.ei i svg{width:18px;height:18px}
-.ei.on i{box-shadow:0 0 0 2px var(--pf-white),0 0 0 4px #1c1a18}
-.ei small{font-size:var(--pf-fs-label);color:var(--ink2);font-weight:600}
-.dc{width:36px;height:36px;border-radius:12px;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:var(--pf-fs-caption);color:#6f6964}
-.dc s{display:block;width:12px;height:3px;border-radius:2px}
-.nv{display:grid;grid-template-columns:repeat(4,1fr);border-radius:12px;background:var(--pf-white);box-shadow:0 0 0 1px var(--line);height:56px;align-items:center}
-.nv span{display:flex;flex-direction:column;align-items:center;gap:2px}
-.nv small{font-size:var(--pf-fs-label);color:#a39b95;font-weight:600}
-.nv .on small{color:#1c1a18}
-.sg2{display:grid;grid-template-columns:repeat(3,1fr);background:#f3f0eb;border-radius:12px;padding:4px;height:40px}
-.sg2 span{display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-caption);color:#6f6964;font-weight:600;border-radius:9px}
-.sg2 .on{background:var(--pf-white);color:#1c1a18;box-shadow:0 1px 3px rgba(28,26,24,.08)}
-.ul{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line);height:34px}
-.ul span{display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-caption);color:#6f6964;font-weight:600}
-.ul .on{color:#1c1a18;box-shadow:inset 0 -2px 0 #1c1a18}
-.rc2{border-radius:14px;background:var(--pf-white);box-shadow:0 0 0 1px #dedbd8;padding:10px 14px 10px 18px;position:relative}
-.rc2:before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:3px;border-radius:2px;background:#e66f5c}
-.rc2 div{display:flex;justify-content:space-between;font-size:var(--pf-fs-caption);font-weight:700}
-.rc2 div small{font-weight:500;color:#6f6964;font-size:var(--pf-fs-label)}
-.rc2 p{font-size:var(--pf-fs-label);color:#5f5a56;margin-top:2px}
-.lr{border-radius:12px;background:var(--pf-white);box-shadow:0 0 0 1px var(--line);display:flex;justify-content:space-between;align-items:center;padding:8px 14px}
-.lr b{display:block;font-size:var(--pf-fs-caption)}
-.lr small{font-size:var(--pf-fs-label);color:#6f6964}
-.lr em{font-style:normal;color:#6f6964}
-body{background:#faf9f4}
-.gf{margin-top:28px;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:18px;height:478px}
-.cdf{background:var(--pf-white);border-radius:var(--pf-r-lg);box-shadow:0 16px 36px -28px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);padding:var(--pf-pad-card);display:flex;flex-direction:column}
-.cdf h4{font-size:var(--pf-fs-lead);font-weight:700;letter-spacing:-.03em;margin-bottom:14px}
-.stack{display:grid;grid-template-rows:auto 1fr;gap:24px}
-.font{font-size:var(--pf-fs-display);font-weight:800;letter-spacing:-.05em;line-height:1;margin-bottom:12px}
-.ts{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:5px 0;white-space:nowrap}
-.ts span{letter-spacing:-.03em}
-.ts em{font-style:normal;font-size:var(--pf-fs-label);color:var(--ink3);font-weight:600;letter-spacing:0}
-.cr{display:grid;grid-template-columns:62px 72px 1fr auto;align-items:center;gap:8px;height:42px;font-size:var(--pf-fs-caption)}
-.cr>i{width:26px;height:26px;border-radius:var(--pf-r-sm)}
-.cr b{font-weight:700}
-.cr span{color:var(--ink2)}
-.cr em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-purple-700);background:var(--pf-purple-100);border-radius:var(--pf-r-pill);padding:2px 8px;letter-spacing:0}
-.dots{display:grid;grid-template-columns:repeat(4,12px);gap:3px}
-.dots i{width:12px;height:12px;border-radius:50%}
-.tier{display:grid;grid-template-columns:1fr 18px 1fr 18px 1fr;align-items:center;text-align:center}
-.tier div{border-radius:var(--pf-r-md);background:var(--pf-purple-50);padding:9px 4px}
-.tier small{display:block;font-size:var(--pf-fs-label);color:var(--pf-purple-700);font-weight:700;letter-spacing:0}
-.tier b{font-size:var(--pf-fs-h2);font-weight:700}
-.tier>i{font-style:normal;color:var(--ink4)}
-.cap{text-align:center;font-size:var(--pf-fs-caption);color:var(--ink2);line-height:1.55;margin:14px 0}
-.stage{flex:1;border-radius:var(--pf-r-lg);background:linear-gradient(180deg,var(--pf-purple-50),#faf9f4);display:flex;align-items:center;justify-content:center;gap:14px;padding:0 16px}
-.mw{text-align:center}
-.mw code{display:block;margin-top:8px;font-size:var(--pf-fs-label);font-weight:700;background:none;padding:0;letter-spacing:0}
-.mcf{width:186px;border-radius:var(--pf-r-lg);padding:14px;text-align:left}
-.mcf small{font-size:var(--pf-fs-label);font-weight:600}
-.mcf b{display:block;font-size:var(--pf-fs-lead);font-weight:700;margin:2px 0 4px;letter-spacing:-.03em}
-.mcf p{font-size:var(--pf-fs-label);color:#5f5a56;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mrow{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
-.mrow .ch{height:30px;font-size:var(--pf-fs-label);padding:0 10px}
-.mrow .dc{width:32px;height:32px}
-.brow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.brow .bt{height:48px;border-radius:20px;font-size:var(--pf-fs-body-strong);min-width:0}
-.crow{display:flex;justify-content:center;gap:6px;margin:14px 0}
-.crow .ch{height:32px;font-size:var(--pf-fs-label);padding:0 10px}
-.stage.h{flex-direction:column;gap:12px;padding:18px}
-.hero{width:100%;border-radius:18px;padding:16px 18px;background:linear-gradient(135deg,#ffd9cf,#f6a395)}
-.hero p{font-size:var(--pf-fs-h3);font-weight:700;letter-spacing:-.03em;line-height:1.35;color:#1c1a18}
-.hero p em{font-style:normal;color:#a23b32}
-.wk{display:flex;justify-content:space-between;margin-top:12px;background:rgba(255,255,255,.7);border-radius:14px;padding:4px}
-.stage.h .nv{width:100%;height:52px}
-.gg{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;height:482px}
-.cdf{padding:var(--pf-pad-card)}
-.cdf h4{margin-bottom:12px}
-.font{font-size:var(--pf-fs-display);margin-bottom:10px}
-.ts{padding:4px 0}
-.sps{display:flex;align-items:flex-end;gap:7px;height:52px}
-.sp{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px}
-.sp i{display:block;background:var(--pf-purple-300);border-radius:var(--pf-r-xs);min-width:2px;min-height:2px}
-.sp small,.ra small{font-size:var(--pf-fs-label);color:var(--ink3);font-weight:600;letter-spacing:0;white-space:nowrap}
-.ras{display:flex;gap:8px;margin-top:14px}
-.ra{display:flex;flex-direction:column;align-items:center;gap:4px}
-.ra i{display:block;width:52px;height:30px;background:var(--pf-purple-100);border:1.5px solid var(--pf-purple-350)}
-.nt{font-size:var(--pf-fs-label);color:var(--ink3);margin-top:8px;letter-spacing:0}
-.tls{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-.tl{border-radius:var(--pf-r-md);padding:10px 7px}
-.tl i{display:block;width:20px;height:20px;border-radius:var(--pf-r-sm);margin-bottom:8px}
-.tl b{display:block;font-size:var(--pf-fs-caption);font-weight:700;letter-spacing:-.03em}
-.tl small{font-size:var(--pf-fs-label);color:var(--ink2);letter-spacing:-.02em;white-space:nowrap}
-.cap{margin:12px 0}
-.stage.v{flex-direction:column;align-items:stretch;justify-content:space-around;gap:0;padding:14px 16px}
-.rl{font-size:var(--pf-fs-label);font-weight:700;color:var(--ink2);margin-bottom:6px;letter-spacing:0}
-.rl small{font-size:var(--pf-fs-label);font-weight:500;color:var(--ink3);margin-left:4px}
-.ramp{display:flex;height:48px;border-radius:var(--pf-r-md);overflow:hidden}
-.ramp span{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 5px 7px;font-size:var(--pf-fs-label);font-weight:700;line-height:1.2}
-.ramp small{font-size:var(--pf-fs-label);letter-spacing:0}
-.ramp.e span{color:var(--pf-white);text-shadow:0 0 2px rgba(0,0,0,.25)}
-.inp{border-radius:var(--pf-r-md);background:var(--pf-white);box-shadow:inset 0 0 0 1px #e4dfda;color:var(--ink)}
-.inp small{display:block;text-align:right;font-size:var(--pf-fs-label);color:var(--ink3);margin-top:2px}
-.bgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.bgrid .bt{height:44px;border-radius:20px;font-size:var(--pf-fs-body);min-width:0}
-.ins{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.inp{font-size:var(--pf-fs-label);padding:9px 11px}
-.inp.ph{color:#a39b95}
-.inp.ph small{visibility:hidden}
-.cts{display:flex;align-items:center;gap:6px}
-.cts .ch{height:32px;font-size:var(--pf-fs-label);padding:0 10px}
-.cts .tg{flex:none}
-.dcs{display:flex;gap:6px;align-items:center}
+.lb{margin-top:28px;line-height:18px;font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700);letter-spacing:.04em}
+.steps{margin-top:10px;display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;align-items:center}
+.st{border-radius:var(--pf-r-lg);background:var(--pf-white);box-shadow:var(--pf-shadow-card);padding:var(--pf-pad-card);height:182px}
+.sh{display:flex;justify-content:space-between;align-items:center}
+.sh small{font-size:var(--pf-fs-label);color:var(--ink3);font-weight:600;letter-spacing:0}
+.st b{display:block;margin:10px 0 6px;font-size:var(--pf-fs-h4);font-weight:700;letter-spacing:-.04em}
+.st p{font-size:var(--pf-fs-caption);line-height:1.55;color:var(--ink2);font-weight:500}
+.ar{font-style:normal;text-align:center;color:var(--pf-purple-350);font-size:var(--pf-fs-h2);font-weight:700}
+.ms{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.m{border-radius:var(--pf-r-lg);background:var(--pf-purple-50);border:1px solid var(--pf-purple-100);padding:var(--pf-pad-card);height:216px}
+.m small{font-size:var(--pf-fs-label);font-weight:700;color:var(--ink3);letter-spacing:0}
+.m b{display:block;margin-top:6px;font-size:var(--pf-fs-display);font-weight:700;color:var(--pf-purple-700);letter-spacing:-.04em;line-height:1.1}
+.m p{margin-top:8px;font-size:var(--pf-fs-body-strong);font-weight:700;color:var(--ink)}
+.m span{display:block;margin-top:4px;font-size:var(--pf-fs-caption);color:var(--ink2);font-weight:500}
 </style>
-<section class="slide"><div class="eyebrow">Deliver · Design System</div><h1>색 하나에 <em>감정 하나</em>, 토큰과 컴포넌트로 화면 전체를 묶었습니다.</h1><p class="sub">Primitive 54 → Semantic 59 → Component 4. Figma 변수 147개와 CSS 변수 이름을 1:1로 맞추고, Figma 컴포넌트에는 hex를 직접 쓰지 않았습니다.</p><div class="gg">
-<div class="stack"><div class="cdf"><h4>Typography</h4><div class="font">Pretendard</div><div class="ts"><span style="font-size:var(--pf-fs-h2);font-weight:700">짜증난 마음</span><em>Title · 24 / 700</em></div><div class="ts"><span style="font-size:var(--pf-fs-lead);font-weight:400">회의가 길어져서 짜증이 났다.</span><em>Body · 16 / 400</em></div><div class="ts"><span style="font-size:var(--pf-fs-label);font-weight:600">10월 5일 월요일</span><em>Caption · 12 / 600</em></div></div>
-<div class="cdf"><h4>Spacing · Radius</h4><div class="sps"><div class="sp"><i style="width:1.8px;height:1.8px"></i><small>2</small></div><div class="sp"><i style="width:3.6px;height:3.6px"></i><small>4</small></div><div class="sp"><i style="width:7.2px;height:7.2px"></i><small>8</small></div><div class="sp"><i style="width:10.8px;height:10.8px"></i><small>12</small></div><div class="sp"><i style="width:14.4px;height:14.4px"></i><small>16</small></div><div class="sp"><i style="width:18.0px;height:18.0px"></i><small>20</small></div><div class="sp"><i style="width:21.6px;height:21.6px"></i><small>24</small></div><div class="sp"><i style="width:28.8px;height:28.8px"></i><small>32</small></div><div class="sp"><i style="width:36.0px;height:36.0px"></i><small>40</small></div><div class="sp"><i style="width:43.2px;height:43.2px"></i><small>48</small></div></div><div class="nt">4 · 8 기준 10단계 · padding · margin · gap 1,970곳을 토큰으로</div>
-<div class="ras"><div class="ra"><i style="border-radius:8px"></i><small>8 · 태그</small></div><div class="ra"><i style="border-radius:12px"></i><small>12 · 칩</small></div><div class="ra"><i style="border-radius:16px"></i><small>16 · 카드</small></div><div class="ra"><i style="border-radius:20px"></i><small>20 · 버튼</small></div><div class="ra"><i style="border-radius:22px"></i><small>full · 토글</small></div></div></div></div>
-<div class="cdf"><h4>Color</h4><div class="tls"><div class="tl" style="background:#ffeae6"><i style="background:#e66f5c;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:#a23b32">감정 8색</b><small>그날의 감정</small></div><div class="tl" style="background:#fff5f2"><i style="background:#ffeae6;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:#a23b32">감정 tint</b><small>기록한 날</small></div><div class="tl" style="background:#f1f0f3"><i style="background:#2b2733;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:#2b2733">차콜</b><small>누르는 것</small></div><div class="tl" style="background:#f3f0eb"><i style="background:#6f6964;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:#5f5a56">웜 그레이</b><small>보조 정보</small></div><div class="tl" style="background:#fbfaf7"><i style="background:#faf9f4;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i><b style="color:#5f5a56">아이보리</b><small>바탕</small></div></div>
-<p class="cap">색마다 맡는 역할은 하나 — 글보다 색으로 먼저 그날의 감정을 읽습니다.</p>
-<div class="stage v"><div><div class="rl">Emotion<small>감정 8색 · fill</small></div><div class="ramp e"><span style="background:#f05a8a"><small>설렘</small></span><span style="background:#8bd0bd"><small>평온</small></span><span style="background:#f7bd4e"><small>기쁨</small></span><span style="background:#d19cdb"><small>복합</small></span><span style="background:#80a9dc"><small>슬픔</small></span><span style="background:#dfa292"><small>불안</small></span><span style="background:#9ca9b1"><small>무기력</small></span><span style="background:#e66f5c"><small>화남</small></span></div></div>
-<div><div class="rl">Neutral<small>글자 대비 (캔버스 위)</small></div><div class="ramp"><span style="background:#2b2733;color:var(--pf-white)"><small>950</small><small>13.8:1</small></span><span style="background:#1c1a18;color:var(--pf-white)"><small>900</small><small>16.5:1</small></span><span style="background:#5f5a56;color:var(--pf-white)"><small>600</small><small>6.5:1</small></span><span style="background:#6f6964;color:var(--pf-white)"><small>500</small><small>5.1:1</small></span><span style="background:#a39b95;color:var(--pf-white)"><small>400</small><small>장식</small></span><span style="background:#e4dfda;color:#5f5a56"><small>200</small><small>테두리</small></span></div></div></div></div>
-<div class="cdf"><h4>Components</h4><div class="bgrid"><span class="bt" style="height:48px;border-radius:20px;font-size:var(--pf-fs-body-strong);background:#2b2733;color:var(--pf-white);border-color:#2b2733">저장하기</span><span class="bt" style="height:48px;border-radius:20px;font-size:var(--pf-fs-body-strong);background:var(--pf-white);color:#1c1a18;border-color:#e4dfda">이전</span><span class="bt" style="height:40px;border-radius:16px;font-size:var(--pf-fs-body);background:#2b2733;color:var(--pf-white);border-color:#2b2733">기록하기</span><span class="bt" style="height:48px;border-radius:20px;font-size:var(--pf-fs-body-strong);background:#f3f0eb;color:#a39b95;border-color:#f3f0eb">다음</span></div>
-<p class="cap">기본 · 보조 · 비활성 × L 48 / M 40 — 상태는 토큰으로만 바뀝니다.</p>
-<div class="stage v"><div><div class="rl">Input<small>빈 칸 / 입력 중</small></div><div class="ins"><div class="inp ph">오늘을 한 문장으로<small>0 / 100</small></div><div class="inp">회의가 길어져서…<small>16 / 100</small></div></div></div>
-<div><div class="rl">Chip · Toggle</div><div class="cts"><span class="ch" style="background:#ffeae6;border-color:#c8493d;color:#a23b32"><i style="background:#e66f5c"></i>짜증난</span><span class="ch" style="background:var(--pf-white);border-color:#e4dfda;color:#1c1a18"><i style="background:#e66f5c"></i>화난</span><span class="tg on"></span><span class="tg"></span></div></div>
-<div><div class="rl">Day Cell<small>기록한 날 · 선택 · 빈 날</small></div><div class="dcs"><span class="dc" style="background:#eaf8f3"><b style="font-weight:700">2</b><s style="background:#8bd0bd"></s></span><span class="dc" style="background:#fff1f5"><b style="font-weight:700">3</b><s style="background:#f05a8a"></s></span><span class="dc" style="background:#ffede8"><b style="font-weight:700">4</b><s style="background:#dfa292"></s></span><span class="dc" style="background:#2b2733;color:var(--pf-white)"><b style="font-weight:700">5</b><s style="background:#e66f5c"></s></span><span class="dc" style=""><b style="">6</b><s style="opacity:0"></s></span><span class="dc" style=""><b style="">7</b><s style="opacity:0"></s></span></div></div></div></div>
-</div><div class="opp"><em>INSIGHT</em><span>감정색은 기록, 차콜은 누르는 것 — 색의 의미를 고정해 글보다 먼저 그날의 감정이 읽히게 했습니다.</span></div></section>
+<section class="slide"><div class="eyebrow">Deliver · Validation Plan &amp; Next Step</div><h1>다음 단계는, 작품이 돌아올 때 사용자가 <em>다시 기록하는지</em> 확인하는 것입니다.</h1><p class="sub">아직 사용자 테스트 전입니다. <b>3명 사용성 테스트로 흐름을 다듬고</b>, 출시 후에는 지표로 "계속 기록하는가"를 검증합니다.</p><div class="lb">검증 단계</div><div class="steps"><div class="st"><div class="sh"><span class="chip">01</span><small>다음 버전 전</small></div><b>사용성 테스트</b><p>참가자 3명 · 1인 30분 · Think-aloud</p><p>과업 4개: 기록하기 · 홈 이해 · 돌아보기 · 작품 만들기</p></div><i class="ar">›</i><div class="st"><div class="sh"><span class="chip">02</span><small>테스트 직후</small></div><b>반복 문제 개선</b><p>2명 이상 반복된 문제부터 수정</p><p>행동 → 발언 → 원인 → UI 개선 → 다시 확인</p></div><i class="ar">›</i><div class="st"><div class="sh"><span class="chip">03</span><small>공개 이후</small></div><b>출시 후 측정</b><p>작품을 만든 사용자와 만들지 않은 사용자의</p><p>다시 기록하는 비율 비교</p></div></div><div class="lb" style="margin-top:28px">성공 지표</div><div class="ms"><div class="m"><small>사용성</small><b>2 / 3명</b><p>과업 1 · 4를 도움 없이 완료</p><span>기록 3단계와 작품 만들기를 혼자 끝내는가</span></div><div class="m"><small>핵심 가치</small><b>2 / 3명</b><p>"기존 일기 앱과 다르다"고 답함</p><span>기록이 작품으로 남는 경험이 차이로 느껴지는가</span></div><div class="m"><small>지속</small><b>3.3% ↑</b><p>30일 뒤에도 기록하는 사용자</p><span>02장의 업계 중앙값보다 높이는 것이 목표</span></div></div><div class="opp"><em>INSIGHT</em><span>이 프로젝트의 질문은 하나입니다 — <b>기록이 작품으로 돌아오면, 사람들은 다시 기록하는가.</b></span></div></section>
