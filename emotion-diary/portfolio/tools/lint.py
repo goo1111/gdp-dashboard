@@ -5,7 +5,7 @@ Usage: python3 tools/lint.py
 규칙
 - font-size는 var(--pf-fs-*)만 (px 직접 쓰기 금지)
 - 색은 var(--pf-*) 또는 데이터 색(앱 감정색 · 앱 중립색 · 차트 표시색)만
-- border-radius는 var(--pf-r-*), 50%, 0만. 예외: 11장의 앱 컴포넌트 예시(클래스 · 인라인, 앱의 실제 값을 보여 줌)
+- border-radius는 var(--pf-r-*), 50%, 0만. 예외: 'pf-lint: app-examples' 표시가 있는 장(디자인 시스템)의 앱 컴포넌트 예시(클래스 · 인라인, 앱의 실제 값을 보여 줌)
 - box-shadow의 카드 그림자는 var(--pf-shadow-*)
 - 카드(모서리 var(--pf-r-lg))의 안쪽 여백은 var(--pf-pad-card)
 - 모든 글자가 src/fonts/pretendard-subset.css에 들어 있어야 함 (없으면 다른 글꼴로 그려짐)
@@ -34,7 +34,7 @@ errors = []
 for fn in sorted(os.listdir(SRC)):
     s = open(os.path.join(SRC, fn)).read()
     s = re.sub(r'<svg.*?</svg>', '', s, flags=re.S)  # inline icons keep their own fills
-    n = fn[:2]
+    app_examples = 'pf-lint: app-examples' in s  # 앱 컴포넌트 예시가 있는 장(디자인 시스템)
     for sel, body in decls(s):
         for prop, val in re.findall(r'([a-z-]+)\s*:\s*([^;]+)', body):
             if prop == 'font-size' and re.search(r'\d+(\.\d+)?px', val):
@@ -45,7 +45,7 @@ for fn in sorted(os.listdir(SRC)):
             if prop == 'padding' and 'var(--pf-r-lg)' in body and re.search(r'(1[89]|[2-9]\d)px', val):
                 errors.append(f'{fn} {sel[:40]} card padding:{val.strip()} -> var(--pf-pad-card)')
             if prop == 'border-radius' and re.search(r'\d+px', val):
-                if not (n == '11' and (sel == 'inline' or APP_EXAMPLE.search(sel))):
+                if not (app_examples and (sel == 'inline' or APP_EXAMPLE.search(sel))):
                     errors.append(f'{fn} {sel[:40]} border-radius:{val.strip()}')
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import font_subset

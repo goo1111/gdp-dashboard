@@ -37,43 +37,49 @@
  },
  {
   "file": "07.html",
-  "label": "07 HOME",
+  "label": "07 핵심 의사결정",
   "font": "pretendard-subset.css",
-  "bar": false
+  "bar": true
  },
  {
   "file": "08.html",
-  "label": "08 CREATE",
+  "label": "08 HOME",
   "font": "pretendard-subset.css",
   "bar": false
  },
  {
   "file": "09.html",
-  "label": "09 CREATE · Variations",
+  "label": "09 CREATE",
   "font": "pretendard-subset.css",
   "bar": false
  },
  {
   "file": "10.html",
-  "label": "10 ARCHIVE",
+  "label": "10 CREATE · Variations",
   "font": "pretendard-subset.css",
   "bar": false
  },
  {
   "file": "11.html",
-  "label": "11 디자인 시스템",
+  "label": "11 ARCHIVE",
   "font": "pretendard-subset.css",
-  "bar": true
+  "bar": false
  },
  {
   "file": "12.html",
-  "label": "12 검증 계획 · 다음 단계",
+  "label": "12 디자인 시스템",
   "font": "pretendard-subset.css",
   "bar": true
  },
  {
   "file": "13.html",
-  "label": "13 회고",
+  "label": "13 검증 계획 · 다음 단계",
+  "font": "pretendard-subset.css",
+  "bar": true
+ },
+ {
+  "file": "14.html",
+  "label": "14 회고",
   "font": "pretendard-subset.css",
   "bar": true
  }
