@@ -13,13 +13,13 @@
  },
  {
   "file": "03.html",
-  "label": "03 리서치 · 문제 정의",
+  "label": "03 시장조사",
   "font": "pretendard-subset.css",
   "bar": true
  },
  {
   "file": "04.html",
-  "label": "04 시장조사",
+  "label": "04 문제 정의",
   "font": "pretendard-subset.css",
   "bar": true
  },
