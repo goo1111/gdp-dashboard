@@ -1,5 +1,5 @@
 <!-- 04 문제 정의 -->
-<title>감정로그 · 유저 인터뷰</title>
+<title>감정로그 · 문제 정의</title>
 <style>
 .src{margin-top:18px}
 .meta{margin-top:22px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3)}
@@ -59,27 +59,27 @@
 </style>
 <section class="slide">
   <div class="eyebrow">Problem Definition</div>
-  <h1>감정 기록은 남기고, 쌓고, 돌려받는 <em>과정이 끊기며 멈춥니다</em>.</h1>
-  <p class="sub">선행 연구 2편(사용자 인터뷰 22명, 앱 리뷰 1,000건)에서 반복된 의견을 <b>입력 · 축적 · 보상</b>으로 묶었습니다.</p>
-  <p class="meta">▶ <b>참고 자료 (2차 자료)</b> | Schueller, 2021 · 사용자 인터뷰 22명 · Caldeira, 2017 · 앱 리뷰 1,000건<span class="scope">범위 밖 · 기록 잊음(알림) · 부정 감정 기록 회피</span></p>
+  <h1>감정 기록은 쉬워지고 보이게 됐지만, <em>다시 기록할 이유</em>로 이어지지 않습니다.</h1>
+  <p class="sub">선행 연구 3편에서 반복된 의견을 <b>입력 · 축적 · 보상</b>으로 묶었습니다.</p>
+  <p class="meta">▶ <b>참고 자료 (2차 자료)</b> | Beltzer, 2023 · 18~25세 50명 · Caldeira, 2017 · 앱 32개 · 리뷰 1,000건 · Schueller, 2021 · 인터뷰 22명<span class="scope">범위 밖 · 기록 잊음(알림) · 부정 감정 기록 회피</span></p>
 
   <div class="grid">
     <div class="pn L">
-      <div class="ph">선행 연구에서 반복된 3가지 장벽 (정성 분석)</div>
+      <div class="ph">선행 연구에서 반복된 3가지 관찰 (정성 분석)</div>
       <div class="rw"><div class="tg"><em>01</em>입력</div><div>
-        <div class="big">선택지 부족</div>
-        <p class="q">"감정이 5가지뿐이라 부족해요."</p>
-        <p class="sm">리뷰 1,000건에서 단순한 선택지에 대한 불만 반복 (Caldeira, 2017)</p>
+        <div class="big">기록의 노력</div>
+        <p class="q">기록에는 노력이 들어, 동기가 떨어지거나 잊으면 그만둡니다.</p>
+        <p class="sm">18~25세 50명 정성 연구 (Beltzer, 2023)</p>
       </div></div>
       <div class="rw"><div class="tg"><em>02</em>축적</div><div>
-        <div class="big">순간이 사라짐</div>
-        <p class="q">"아침엔 기분이 좋다가 20분 뒤엔 나빠져요."</p>
-        <p class="sm">인터뷰 참여자 대부분이 하루 한 번 이하로만 기록 (Schueller, 2021 · 22명)</p>
+        <div class="big">이미 잘 보여 줌</div>
+        <p class="q">기록을 쌓아 그래프 · 달력으로 보여 주는 기능은 이미 많고, 사용자도 유용하게 여깁니다.</p>
+        <p class="sm">앱 32개 기능 분석 (Caldeira, 2017) · 인터뷰 22명 (Schueller, 2021)</p>
       </div></div>
       <div class="rw"><div class="tg"><em>03</em>보상</div><div>
-        <div class="big">확인으로 끝남</div>
-        <p class="q">"기분이 안 좋다는 건 확인했는데, 그걸로 뭘 하게 도와주진 않아요."</p>
-        <p class="sm">기록을 돌아봐도 다음 행동이나 결과로 이어지지 않음 (Schueller, 2021 · 22명)</p>
+        <div class="big">확인 다음이 없음</div>
+        <p class="q">기록을 해석하거나 다음 행동으로 잇는 지원은 부족합니다.</p>
+        <p class="sm">행동 단계 지원 부족 (Caldeira, 2017) · 해석 · 개선 제안 부족 (Schueller, 2021)</p>
       </div></div>
     </div>
 
@@ -88,14 +88,14 @@
     <div class="pn R">
       <div class="ph">Retention Gap<span>(기록이 동기로 이어지지 않는 지점)</span></div>
       <div class="rw"><div class="tg"><em>01</em>입력</div><div>
-        <div class="t">표현 부담</div>
-        <p class="st">정해진 단어로 골라야 하는 입력</p>
-        <p class="ds">고를 말이 부족해, 시작부터 부담이 됩니다.</p>
+        <div class="t">입력 부담</div>
+        <p class="st">매번 노력이 드는 입력</p>
+        <p class="ds">기록할 때마다 드는 수고가 쌓여 그만두게 됩니다.</p>
       </div></div>
       <div class="rw"><div class="tg"><em>02</em>축적</div><div>
-        <div class="t">흐름 단절</div>
-        <p class="st">하루 한 번만 남는 기록</p>
-        <p class="ds">바뀌는 감정이 하루 한 번으로 뭉뚱그려집니다.</p>
+        <div class="t">보고 끝나는 기록</div>
+        <p class="st">쌓여도 보기만 하는 기록</p>
+        <p class="ds">흐름은 보이지만, 쌓인 기록이 새로 쓰이지 않습니다.</p>
       </div></div>
       <div class="rw"><div class="tg"><em>03</em>보상</div><div>
         <div class="t">보상 부재</div>
@@ -104,5 +104,5 @@
       </div></div>
     </div>
   </div>
-  <div class="opp"><em>INSIGHT</em><span>남기기 번거롭고, 흐름이 쌓이지 않고, 돌아오는 것이 없어 <b>'계속할 이유'</b>를 잃습니다.</span></div>
+  <div class="opp"><em>INSIGHT</em><span>계속 기록하게 하려면 부담을 낮추는 것만으로는 부족합니다. 기록한 뒤 <b>돌아올 이유</b>가 필요합니다.</span></div>
 </section>
