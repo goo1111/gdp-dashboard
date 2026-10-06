@@ -360,12 +360,12 @@ cssG=cssF+'''.gg{margin-top:28px;display:grid;grid-template-columns:1fr 1.14fr 1
 .sp i{display:block;background:#d9d3f1;border-radius:3px;min-width:2px;min-height:2px}.sp small,.ra small{font-size:10.5px;color:var(--ink3);font-weight:600;letter-spacing:0;white-space:nowrap}
 .ras{display:flex;gap:8px;margin-top:14px}.ra{display:flex;flex-direction:column;align-items:center;gap:4px}.ra i{display:block;width:52px;height:30px;background:#f1eefc;border:1.5px solid #b3a8e8}
 .nt{font-size:11.5px;color:var(--ink3);margin-top:8px;letter-spacing:0}
-.tls{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tl{border-radius:12px;padding:10px 9px}
-.tl i{display:block;width:20px;height:20px;border-radius:6px;margin-bottom:8px}.tl b{display:block;font-size:13px;font-weight:700;letter-spacing:-.03em}.tl small{font-size:11px;color:var(--ink2);letter-spacing:0}
+.tls{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.tl{border-radius:12px;padding:10px 7px}
+.tl i{display:block;width:20px;height:20px;border-radius:6px;margin-bottom:8px}.tl b{display:block;font-size:13px;font-weight:700;letter-spacing:-.03em}.tl small{font-size:12px;color:var(--ink2);letter-spacing:-.02em;white-space:nowrap}
 .cap{margin:12px 0}
 .stage.v{flex-direction:column;align-items:stretch;justify-content:space-around;gap:0;padding:14px 16px}
-.rl{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:6px;letter-spacing:0}.rl small{font-weight:500;color:var(--ink3);margin-left:4px}
-.ramp{display:flex;height:40px;border-radius:10px;overflow:hidden}.ramp span{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 5px 7px;font-size:10px;font-weight:700;line-height:1.2}
+.rl{font-size:11.5px;font-weight:700;color:var(--ink2);margin-bottom:6px;letter-spacing:0}.rl small{font-size:12px;font-weight:500;color:var(--ink3);margin-left:4px}
+.ramp{display:flex;height:48px;border-radius:10px;overflow:hidden}.ramp span{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 5px 7px;font-size:10px;font-weight:700;line-height:1.2}
 .ramp small{font-size:10px;letter-spacing:0}.ramp.e span{color:#fff;text-shadow:0 0 2px rgba(0,0,0,.25)}
 .inp{border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1px #e4dfda;color:var(--ink)}.inp small{display:block;text-align:right;font-size:10.5px;color:var(--ink3);margin-top:2px}
 .bgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bgrid .bt{height:44px;border-radius:20px;font-size:14px;min-width:0}
@@ -379,7 +379,6 @@ bodyG=f'''<div class="gg">
 <div class="cdf"><h4>Color</h4><div class="tls">{tlG}</div>
 <p class="cap">색마다 맡는 역할은 하나 — 글보다 색으로 먼저 그날의 감정을 읽습니다.</p>
 <div class="stage v"><div><div class="rl">Emotion<small>감정 8색 · fill</small></div><div class="ramp e">{emoRamp}</div></div>
-<div><div class="rl">Coral<small>화남 한 감정의 4가지 역할</small></div><div class="ramp">{crRamp}</div></div>
 <div><div class="rl">Neutral<small>글자 대비 (캔버스 위)</small></div><div class="ramp">{neRamp}</div></div></div></div>
 <div class="cdf"><h4>Components</h4><div class="bgrid">{btn('P','L',label='저장하기')}{btn('S','L',label='이전')}{btn('P','M',label='기록하기')}{btn('P','L',dis=True,label='다음')}</div>
 <p class="cap">기본 · 보조 · 비활성 × L 48 / M 40 — 상태는 토큰으로만 바뀝니다.</p>
