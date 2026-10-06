@@ -1,0 +1,69 @@
+<!-- 09 CREATE · Variations -->
+<title>감정로그 · HOME</title>
+<style>
+.src{margin-top:18px}
+.ph{position:absolute;border-radius:var(--pf-r-device);border:4px solid var(--pf-device);background:var(--pf-white);overflow:hidden;box-shadow:var(--pf-shadow-device)}
+.ph img{width:100%;height:100%;display:block;object-fit:cover;object-position:top}
+.ph.hl{border-color:var(--pf-purple-600);box-shadow:var(--pf-shadow-device-hl)}
+.sp{position:absolute;top:204px;text-align:center}
+.sp i{display:inline-flex;width:26px;height:26px;border-radius:50%;align-items:center;justify-content:center;font-style:normal;font-size:var(--pf-fs-caption);font-weight:700;background:var(--pf-purple-100);color:var(--pf-purple-700);position:relative;z-index:1;box-shadow:0 0 0 5px var(--pf-bg)}
+.sp i.g{background:var(--pf-white);border:1.5px solid var(--pf-purple-300);color:var(--pf-purple-500);font-size:var(--pf-fs-label)}
+.sp b{display:block;margin-top:8px;font-size:var(--pf-fs-lead);font-weight:700;color:var(--ink);letter-spacing:-.03em;white-space:nowrap}
+.sp small{display:block;margin-top:3px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);white-space:nowrap}
+.sp.on i{background:var(--pf-purple-600);color:var(--pf-white);box-shadow:var(--pf-shadow-ring)}
+.sp.on b{color:var(--pf-purple-700)}
+.dl{position:absolute;top:217px;border-top:1.5px dashed var(--pf-purple-300)}
+.ar{position:absolute;width:22px;height:22px;display:flex;align-items:center;justify-content:center;color:var(--pf-purple-350);font-size:var(--pf-fs-h4);font-weight:600}
+.cap{position:absolute;text-align:center;font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2)}
+.cap.on{color:var(--pf-purple-700)}
+.an{position:absolute}
+.an .row{position:absolute;left:0;width:100%}
+.an .row b{display:block;font-size:var(--pf-fs-body-strong);font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.an .row span{display:block;margin-top:3px;font-size:var(--pf-fs-caption);line-height:1.5;font-weight:500;color:var(--ink2);word-break:keep-all}
+.an .row em{font-style:normal;display:inline-block;margin-bottom:5px;padding:1px 7px;border-radius:var(--pf-r-pill);background:var(--pf-purple-500);color:var(--pf-white);font-size:var(--pf-fs-label);font-weight:700}
+.ld{position:absolute;height:1.5px;background:var(--pf-purple-600)}
+.dot{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--pf-white);border:3px solid var(--pf-purple-600);box-shadow:var(--pf-shadow-ring)}
+.bx2{position:absolute;border-radius:var(--pf-r-md);background:var(--pf-white);box-shadow:var(--pf-shadow-float)}
+.slide .nt{position:absolute;margin:0;font-size:var(--pf-fs-caption);line-height:1.5;font-weight:500;color:var(--ink3);word-break:keep-all}
+.fl{position:absolute;left:88px;top:204px;display:flex;align-items:center;gap:10px;font-size:var(--pf-fs-body);font-weight:600;color:var(--ink2)}
+.fl span{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 14px 0 6px;border-radius:var(--pf-r-pill);background:var(--pf-white);box-shadow:0 0 0 1px var(--pf-purple-200)}
+.fl span i{font-style:normal;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-label);font-weight:700;background:var(--pf-purple-100);color:var(--pf-purple-700)}
+.fl span.on{box-shadow:0 0 0 1.5px var(--pf-purple-600);color:var(--pf-purple-700)}
+.fl span.on i{background:var(--pf-purple-600);color:var(--pf-white)}
+.fl u{text-decoration:none;color:var(--pf-purple-350)}
+.mx{position:absolute;left:640px;top:262px;width:712px}
+.grp{position:absolute}
+.grp h4{font-size:var(--pf-fs-caption);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:8px}
+.grp h4 small{font-weight:500;color:var(--ink3);margin-left:6px;font-size:var(--pf-fs-caption)}
+.th{display:flex;gap:12px}
+.sum2{position:absolute;height:40px;display:flex;align-items:center;gap:10px;padding:0 20px;border-radius:var(--pf-r-md);background:var(--pf-purple-100);border:1px solid var(--pf-purple-200);font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2)}
+.sum2 b{font-size:var(--pf-fs-h4);font-weight:700;color:var(--pf-purple-700);letter-spacing:-.03em}
+.sum2 i{width:1px;height:16px;background:var(--pf-purple-300);margin:0 10px}
+.sum2 .m{margin-left:auto;font-weight:500;color:var(--ink3)}
+.pc{position:absolute;height:40px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink2);white-space:nowrap}
+.pc b{color:var(--pf-purple-700);font-weight:700}
+.tg2{font-style:normal;display:inline-block;margin-right:8px;padding:1px 8px;border-radius:var(--pf-r-pill);background:var(--pf-purple-500);color:var(--pf-white);font-size:var(--pf-fs-label);font-weight:700;vertical-align:1px}
+.eb2{display:inline-block;margin-left:8px;padding:1px 8px;border-radius:var(--pf-r-pill);background:var(--pf-purple-100);color:var(--pf-purple-700);font-size:var(--pf-fs-label);font-weight:700;letter-spacing:0;vertical-align:1px}
+.th figure{margin:0}
+.th img{display:block;border-radius:var(--pf-r-md);background:var(--pf-white);box-shadow:var(--pf-shadow-float)}
+.th figcaption{margin-top:5px;text-align:center;font-size:var(--pf-fs-label);font-weight:600;color:var(--ink2);white-space:nowrap}
+.th figure.on img{box-shadow:0 0 0 2px var(--pf-purple-600)}
+.th figure.on figcaption{color:var(--pf-purple-700)}
+.sum{position:absolute;display:flex;gap:28px;align-items:flex-end;padding:14px 20px;border-radius:var(--pf-r-md);background:var(--pf-purple-100);border:1px solid var(--pf-purple-200)}
+.sum div b{display:block;font-size:var(--pf-fs-h2);font-weight:700;color:var(--pf-purple-700);letter-spacing:-.03em;line-height:1.1}
+.sum div span{display:block;margin-top:4px;font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2)}
+/* 이 장 전용 보정 (이전 빌드에서 옮겨 옴) */
+.slide .th figcaption,.slide .sp small,.slide .nt,.slide .sum div span{font-size:var(--pf-fs-caption)}
+</style>
+<section class="slide">
+  <div class="eyebrow">Deliver · CREATE Variations</div>
+  <h1>기록할 때마다 다른 작품이 돌아오도록 <em>결과의 경우의 수</em>를 설계했습니다.</h1>
+  <p class="sub">확인으로 끝나던 결과를, <b>내 감정과 내가 고른 방식에 따라 달라지는 작품으로 바꿨습니다.</b></p>
+<div class="ph hl" style="left:88px;top:228px;width:208px;height:463px"><img src="asset:123e8bea2a0d.webp" alt="결과 화면 스타일 전환"></div>
+<div class="pc" style="left:88px;top:706px;width:220px"><b>결과 화면</b> 스타일 탭으로 바로 바꿔 봅니다</div>
+<div class="grp" style="left:340px;top:204px"><h4><em class="tg2">내가 고르는 것</em>방식 · 스타일<small>불안 · 하루 기록</small></h4><div class="th" style="gap:10px"><figure class=""><img src="asset:e23eb8ef2a99.jpg" width="117" height="146" alt="작품 · 그림일기"><figcaption>작품 · 그림일기</figcaption></figure><figure class=""><img src="asset:6001a04da149.jpg" width="117" height="146" alt="캐릭터 · 그림일기"><figcaption>캐릭터 · 그림일기</figcaption></figure><figure class=""><img src="asset:97b28c34f5c9.jpg" width="117" height="146" alt="작품 · 컬러 라인"><figcaption>작품 · 컬러 라인</figcaption></figure><figure class=""><img src="asset:5e9cce9158a5.jpg" width="117" height="146" alt="캐릭터 · 미니멀"><figcaption>캐릭터 · 미니멀</figcaption></figure></div></div>
+<div class="grp" style="left:975px;top:204px"><h4><em class="tg2">내가 고르는 것</em>기간<small>불안 · 작품 · 그림일기</small></h4><div class="th" style="gap:10px"><figure class=""><img src="asset:e23eb8ef2a99.jpg" width="117" height="146" alt="하루"><figcaption>하루</figcaption></figure><figure class=""><img src="asset:0f2a45c9ff27.jpg" width="117" height="146" alt="주간"><figcaption>주간</figcaption></figure><figure class=""><img src="asset:ec55c10b3953.jpg" width="117" height="146" alt="한 달"><figcaption>한 달</figcaption></figure></div></div>
+<i style="position:absolute;left:906px;top:204px;width:1px;height:198px;background:var(--line)"></i>
+<div class="grp" style="left:340px;top:462px"><h4><em class="tg2">기록이 정하는 것</em>8가지 감정<small>작품 · 그림일기 · 하루 기록</small></h4><div class="th" style="gap:10px"><figure class=""><img src="asset:df0e27fd4939.jpg" width="117" height="146" alt="화남"><figcaption>화남</figcaption></figure><figure class=""><img src="asset:0b46dae024fd.jpg" width="117" height="146" alt="기쁨"><figcaption>기쁨</figcaption></figure><figure class=""><img src="asset:35f2912f2319.jpg" width="117" height="146" alt="무기력"><figcaption>무기력</figcaption></figure><figure class=""><img src="asset:ed6a13427741.jpg" width="117" height="146" alt="복합"><figcaption>복합</figcaption></figure><figure class=""><img src="asset:e23eb8ef2a99.jpg" width="117" height="146" alt="불안"><figcaption>불안</figcaption></figure><figure class=""><img src="asset:669fb04254f7.jpg" width="117" height="146" alt="설렘"><figcaption>설렘</figcaption></figure><figure class=""><img src="asset:92d3eda6c49c.jpg" width="117" height="146" alt="슬픔"><figcaption>슬픔</figcaption></figure><figure class=""><img src="asset:51266ba81242.jpg" width="117" height="146" alt="평온"><figcaption>평온</figcaption></figure></div></div>
+<div class="sum2" style="left:340px;top:706px;width:1006px"><b>12가지 조합</b><span>방식 2 × 스타일 2 × 기간 3</span><i></i><b>8가지 감정</b><span>감정마다 다른 이미지와 바탕색</span><i></i><span class="m">미리 만든 이미지 80개로 구현 · 캐릭터 한 달은 주간 이미지 사용</span></div>
+</section>

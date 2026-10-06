@@ -1,0 +1,49 @@
+<!-- 06 IA · 기능 구조 -->
+<title>감정로그 · IA · 기능 구조</title>
+<style>
+.src{margin-top:18px}
+.src{padding-top:12px;border-top:1px solid var(--line);font-size:var(--pf-fs-caption);color:var(--ink4);font-weight:500}
+.lp{position:absolute;left:0;top:0;width:1440px;height:810px}
+.nd{position:absolute;height:38px;border-radius:var(--pf-r-md);display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-body);font-weight:600;white-space:nowrap;box-sizing:border-box}
+.nd.ph{background:var(--pf-white);border:2px solid;color:var(--ink);font-weight:700;font-size:var(--pf-fs-body)}
+.nd.ph em{position:absolute;top:-11px;left:50%;transform:translateX(-50%);height:20px;padding:0 9px;border-radius:var(--pf-r-pill);color:var(--pf-white);font-style:normal;font-size:var(--pf-fs-caption);font-weight:700;letter-spacing:.04em;display:flex;align-items:center;white-space:nowrap}
+.nd.tc{background:var(--pf-purple-100);color:var(--pf-purple-800)}
+.nd.fm{background:var(--pf-white);border:1.5px dashed var(--pf-purple-800);color:var(--pf-purple-800)}
+.nd.sys{background:var(--pf-line);color:var(--pf-ink4)}
+.nd.nx{background:transparent;border:1.5px dotted var(--pf-line-strong);color:var(--pf-ink5);text-decoration:line-through;font-size:var(--pf-fs-caption)}
+.tab{position:absolute;height:38px;border-radius:var(--pf-r-md);background:var(--pf-ink);color:var(--pf-white);display:flex;align-items:center;justify-content:center;gap:8px;font-size:var(--pf-fs-body-strong);font-weight:700}
+.tab span{font-size:var(--pf-fs-caption);font-weight:600;opacity:.7}
+.lb{position:absolute;transform:translate(-50%,-50%);font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700);background:var(--pf-bg);padding:1px 6px;white-space:nowrap}
+.leg{position:absolute;left:88px;top:692px;width:620px;padding:14px 18px;border-radius:var(--pf-r-md);background:var(--pf-white);box-shadow:var(--pf-shadow-card);display:grid;grid-template-columns:repeat(4,1fr);gap:9px 12px}
+.leg div{display:flex;align-items:center;gap:7px;font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2);white-space:nowrap}
+.leg i{width:26px;height:14px;border-radius:var(--pf-r-xs);flex:none}
+.leg i.f{background:var(--pf-white);border:1px solid var(--pf-line)}
+.leg i.b{background:var(--pf-white);border:1.5px solid var(--pf-purple-600)}
+.leg i.d{background:var(--pf-white);border:1.5px dashed var(--pf-purple-500)}
+.leg i.x{border:1.5px dotted var(--pf-line-strong)}
+.memo{position:absolute;left:732px;top:692px;width:620px;padding:14px 18px;border-radius:var(--pf-r-md);background:var(--pf-purple-100)}
+.memo b{font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700)}
+.memo p{margin-top:5px;font-size:var(--pf-fs-caption);line-height:1.5;font-weight:500;color:var(--ink2);word-break:keep-all}
+.memo s{color:var(--ink3)}
+.memo strong{color:var(--ink);font-weight:700}
+.leg{left:auto!important;right:88px!important;top:212px!important;width:auto!important;height:auto;padding:0!important;background:none!important;box-shadow:none!important;display:flex!important;gap:18px!important}
+.leg div{font-size:var(--pf-fs-caption)}
+/* 이 장 전용 보정 (이전 빌드에서 옮겨 옴) */
+.nd.fn{background:var(--pf-white);border:1px solid var(--pf-line);color:var(--ink)}
+.nd.tc{background:var(--pf-purple-50) !important;color:var(--pf-purple-700) !important;border:1px solid var(--pf-purple-200)}
+.nd.sys{background:var(--pf-surface-2) !important;color:var(--pf-ink4) !important}
+.nd.fm{border-color:var(--pf-purple-500) !important;color:var(--pf-purple-700) !important}
+.tab span{opacity:.6}
+</style>
+<section class="slide">
+  <div class="eyebrow">Develop · IA &amp; Function</div>
+  <h1><em>기록 → 창작 → 아카이브</em> 한 흐름에 집중해, 꼭 필요한 4개 탭만 남겼습니다.</h1>
+  <p class="sub">2인 · 5개월 안에 <b>'기록이 창작으로 이어지면 계속 기록하는가'</b>를 확인하는 데 필요한 기능만 남겼습니다.</p>
+<div class="cz" style="position:absolute;left:0;top:0;width:1440px;height:810px">
+  <svg class="lp" viewBox="0 0 1440 810" fill="none"><defs><marker id="m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8a7bd8"/></marker></defs><path d="M220.0 222.0H258.7" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M469.5 222.0H535.3" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M594.8 241.0V262.0H1221.0V272.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M219.0 262.0H594.8" stroke="#dcdae2" stroke-width="1.4"/><path d="M219.0 262.0V272.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M553.0 262.0V272.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 262.0V272.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M219.0 308.0V319.0" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M219.0 374.8V391.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M219.0 434.8V451.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M219.0 494.8V511.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M553.0 308.0V319.0" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M553.0 374.8V391.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M553.0 434.8V451.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M553.0 494.8V511.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 308.0V319.0" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M887.0 374.8V391.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 434.8V451.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 494.8V511.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 554.8V571.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M887.0 614.8V631.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M1221.0 308.0V319.0" stroke="#c9c6d2" stroke-width="1.4" marker-end="url(#m)"/><path d="M1221.0 374.8V391.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M1221.0 434.8V451.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M1221.0 494.8V511.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M1221.0 554.8V571.0" stroke="#dcdae2" stroke-width="1.4"/><path d="M349.5 412.9H399.6V352.9H420.4" stroke="#8a7bd8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#m)"/><path d="M683.5 530.0H741.9V472.9H754.4" stroke="#8a7bd8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#m)"/><path d="M219.0 554.8V701.4H725.2V352.9H754.4" stroke="#8a7bd8" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#m)"/></svg>
+  <div class="tab" style="left:88.5px;top:271.0px;width:260.9px">홈</div><div class="tab" style="left:422.5px;top:271.0px;width:260.9px">창작소</div><div class="tab" style="left:756.5px;top:271.0px;width:260.9px">아카이브</div><div class="tab" style="left:1090.5px;top:271.0px;width:260.9px">마이</div>
+  <div class="nd sys" style="left:88.0px;top:203.0px;width:132.1px">앱 실행</div><div class="nd sys" style="left:260.8px;top:203.0px;width:208.8px">온보딩 · 첫 기록 체험</div><div class="nd sys" style="left:537.3px;top:203.0px;width:114.8px">탭바</div><div class="nd ph" style="left:88.5px;top:331.0px;width:260.9px;border-color:var(--pf-purple-600)">감정 기록 3단계</div><div class="nd fn" style="left:88.5px;top:391.0px;width:260.9px">마음 위치 → 세부 감정 → 한 문장</div><div class="nd fn" style="left:88.5px;top:451.0px;width:260.9px">이번 주 기록 · 흐름</div><div class="nd sys" style="left:88.5px;top:511.0px;width:260.9px">기록 수정 · 임시 저장</div><div class="nd ph" style="left:422.5px;top:331.0px;width:260.9px;border-color:var(--pf-purple-600)">창작 방식 선택</div><div class="nd fn" style="left:422.5px;top:391.0px;width:260.9px">감정 작품 / 감정 캐릭터</div><div class="nd fn" style="left:422.5px;top:451.0px;width:260.9px">기간 선택 (하루 · 주간 · 한 달)</div><div class="nd fn" style="left:422.5px;top:511.0px;width:260.9px">결과 확인 · 저장</div><div class="nd ph" style="left:756.5px;top:331.0px;width:260.9px;border-color:var(--pf-purple-600)">감정 달력</div><div class="nd fn" style="left:756.5px;top:391.0px;width:260.9px">감정 리포트 (일 · 주 · 월)</div><div class="nd fn" style="left:756.5px;top:451.0px;width:260.9px">나의 창작물 (갤러리 · 도감)</div><div class="nd fn" style="left:756.5px;top:511.0px;width:260.9px">굿즈 미리보기</div><div class="nd fm" style="left:756.5px;top:571.0px;width:260.9px">굿즈 주문 · 공유</div><div class="nd sys" style="left:756.5px;top:631.0px;width:260.9px">원문 기록 보기</div><div class="nd sys" style="left:1090.5px;top:331.0px;width:260.9px">내 정보</div><div class="nd sys" style="left:1090.5px;top:391.0px;width:260.9px">알림 (기본 꺼짐)</div><div class="nd sys" style="left:1090.5px;top:451.0px;width:260.9px">앱 설정 (자동 · 임시 저장)</div><div class="nd sys" style="left:1090.5px;top:511.0px;width:260.9px">데이터 관리 (내보내기 · 삭제)</div><div class="nd sys" style="left:1090.5px;top:571.0px;width:260.9px">이용 원칙 · 개인정보</div><div class="nd nx" style="left:1090.0px;top:631.0px;width:262.0px">커뮤니티 · 실물 굿즈 결제 · 퍼널 로깅</div>
+  <span class="lb" style="left:386.0px;top:400.2px">창작하기</span><span class="lb" style="left:712px;top:508px">저장</span><span class="lb" style="left:553.0px;top:701.4px">기록 저장 → 달력 반영</span>
+  <div class="leg"><div><i class="b"></i>탭 진입 화면</div><div><i class="f"></i>기능</div><div><i class="d"></i>형태만 구현</div><div><i style="background:var(--pf-surface-2)"></i>공통</div><div><i class="x"></i>다음 단계</div></div>
+  </div>
+</section>

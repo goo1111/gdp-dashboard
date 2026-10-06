@@ -1,0 +1,108 @@
+<!-- 03 리서치 · 문제 정의 -->
+<title>감정로그 · 유저 인터뷰</title>
+<style>
+.src{margin-top:18px}
+.meta{margin-top:22px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3)}
+.meta b{font-weight:600;color:var(--ink2)}
+.meta .scope{float:right;font-size:var(--pf-fs-caption);color:var(--ink3);background:var(--pf-line);border-radius:var(--pf-r-pill);padding:2px 10px}
+.grid{margin-top:12px;display:grid;grid-template-columns:600px 1fr 600px;align-items:start}
+.pn{border-radius:var(--pf-r-lg);overflow:hidden;background:var(--pf-white);box-shadow:var(--pf-shadow-card);height:416px}
+.ph{height:42px;display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-body);font-weight:600}
+.L .ph{background:var(--pf-line);color:var(--ink2)}
+.R .ph{background:var(--pf-purple-600);color:var(--pf-white)}
+.R .ph span{font-weight:500;opacity:.85;margin-left:6px}
+.rw{display:grid;grid-template-columns:66px 1fr;column-gap:16px;padding:0 32px}
+.L .rw{margin-top:22px}
+.R .rw{margin-top:30px}
+.tg{margin-top:6px;display:flex;align-items:center;gap:6px;font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700);white-space:nowrap}
+.tg em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-white);background:var(--pf-purple-500);border-radius:var(--pf-r-pill);padding:1px 8px}
+.big{font-size:var(--pf-fs-stat);font-weight:700;letter-spacing:-.03em;color:var(--pf-purple-700);line-height:1.15}
+.q{margin-top:6px;font-size:var(--pf-fs-body-strong);font-weight:600;color:var(--ink);line-height:1.45;word-break:keep-all}
+.sm{margin-top:5px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);line-height:1.5;word-break:keep-all}
+.t{font-size:var(--pf-fs-h3);font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.st{margin-top:4px;font-size:var(--pf-fs-body);font-weight:600;color:var(--ink2)}
+.ds{margin-top:4px;font-size:var(--pf-fs-body);font-weight:500;color:var(--ink3);line-height:1.5;word-break:keep-all}
+.chev{height:416px;display:flex;align-items:center;justify-content:center;gap:2px}
+.chev i{width:16px;height:16px;border-top:3px solid var(--pf-purple-300);border-right:3px solid var(--pf-purple-300);transform:rotate(45deg)}
+.chev i:nth-child(2){border-color:var(--pf-purple-350)}
+.chev i:nth-child(3){border-color:var(--pf-purple-500)}
+.bt{margin-top:14px;display:grid;grid-template-columns:600px 1fr 600px}
+.uv{position:relative;height:84px;border-radius:var(--pf-r-md);background:var(--pf-line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.uv:before{content:"";position:absolute;top:-6px;left:50%;width:10px;height:10px;background:var(--pf-purple-600);transform:translateX(-50%) rotate(45deg);border:2px solid var(--pf-bg)}
+.uv small{font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink3)}
+.uv p{margin-top:5px;font-size:var(--pf-fs-lead);font-weight:700;color:var(--pf-purple-700);letter-spacing:-.03em}
+.cl{grid-column:3;height:84px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:var(--pf-fs-lead);line-height:1.6;font-weight:600;color:var(--ink2)}
+.cl b{color:var(--pf-purple-700)}
+.pn,.chev{height:384px}
+.R .rw{margin-top:20px}
+.L .rw{margin-top:18px}
+.bt{margin-top:12px;grid-template-columns:1fr}
+.uv{height:52px;flex-direction:row;gap:14px}
+.uv:before{display:none}
+.uv p{margin-top:0}
+.meta{margin-top:28px;line-height:18px}
+.pn,.chev{height:380px}
+.pn{display:flex;flex-direction:column}
+.pn .rw{flex:1;margin-top:0!important;align-items:center;padding-top:0;padding-bottom:0}
+.pn .ph+.rw{margin-top:8px!important}
+.pn .rw:last-child{margin-bottom:14px}
+.tg{margin-top:0;align-self:center}
+.big{font-size:var(--pf-fs-h3)!important;line-height:1.3!important;letter-spacing:-.03em}
+.q{margin-top:4px!important;font-size:var(--pf-fs-body)!important;font-weight:600!important;line-height:1.5!important}
+.sm{margin-top:3px!important;font-size:var(--pf-fs-caption)!important}
+.t{font-size:var(--pf-fs-h3)!important;line-height:1.3!important}
+.st{margin-top:4px!important;font-size:var(--pf-fs-body)!important;font-weight:600!important;color:var(--ink)!important}
+.ds{margin-top:3px!important;font-size:var(--pf-fs-caption)!important;color:var(--ink3)!important}
+.pn,.chev{height:452px!important}
+/* 이 장 전용 보정 (이전 빌드에서 옮겨 옴) */
+.slide .q,.slide .ds{font-size:var(--pf-fs-body)}
+</style>
+<section class="slide">
+  <div class="eyebrow">Define · Research &amp; Problem Definition</div>
+  <h1>감정 기록은 남기고, 쌓고, 돌려받는 <em>과정이 끊기며 멈춥니다</em>.</h1>
+  <p class="sub">감정 기록 앱 사용자의 인터뷰와 리뷰를 분석해, 의지 부족보다 <b>입력 · 축적 · 보상을 잇는 구조의 부재</b>가 핵심 문제임을 도출했습니다.</p>
+  <p class="meta">▶ <b>분석 자료 (2차 자료)</b> | 감정 기록 앱 사용자 인터뷰 22명 · 감정 앱 리뷰 1,000건 기반<span class="scope">범위 밖 · 기록 잊음(알림) · 부정 감정 기록 회피</span></p>
+
+  <div class="grid">
+    <div class="pn L">
+      <div class="ph">인터뷰 · 리뷰로 드러난 감정 기록 3대 장벽</div>
+      <div class="rw"><div class="tg"><em>01</em>입력</div><div>
+        <div class="big">5가지</div>
+        <p class="q">"감정이 5가지뿐이라 부족해요."</p>
+        <p class="sm">리뷰 1,000건에서 단순한 선택지에 대한 불만 반복 (Caldeira, 2017)</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>02</em>축적</div><div>
+        <div class="big">하루 1회</div>
+        <p class="q">"아침엔 기분이 좋다가 20분 뒤엔 나빠져요."</p>
+        <p class="sm">인터뷰 참여자 대부분이 하루 한 번 이하로만 기록 (Schueller, 2021 · 22명)</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>03</em>보상</div><div>
+        <div class="big">확인뿐</div>
+        <p class="q">"기분이 안 좋다는 건 확인했는데, 그걸로 뭘 하게 도와주진 않아요."</p>
+        <p class="sm">기록을 돌아봐도 다음 행동이나 결과로 이어지지 않음 (Schueller, 2021 · 22명)</p>
+      </div></div>
+    </div>
+
+    <div class="chev"><i></i><i></i><i></i></div>
+
+    <div class="pn R">
+      <div class="ph">Retention Gap<span>(기록이 동기로 이어지지 않는 지점)</span></div>
+      <div class="rw"><div class="tg"><em>01</em>입력</div><div>
+        <div class="t">표현 부담</div>
+        <p class="st">정해진 단어로 골라야 하는 입력</p>
+        <p class="ds">고를 말이 부족해, 시작부터 부담이 됩니다.</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>02</em>축적</div><div>
+        <div class="t">흐름 단절</div>
+        <p class="st">하루 한 번만 남는 기록</p>
+        <p class="ds">바뀌는 감정이 하루 한 번으로 뭉뚱그려집니다.</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>03</em>보상</div><div>
+        <div class="t">보상 부재</div>
+        <p class="st">확인으로 끝나는 결과</p>
+        <p class="ds">그래프로 확인될 뿐, 다음으로 이어지지 않습니다.</p>
+      </div></div>
+    </div>
+  </div>
+  <div class="opp"><em>INSIGHT</em><span>남기기 번거롭고, 흐름이 쌓이지 않고, 돌아오는 것이 없어 <b>'계속할 이유'</b>를 잃습니다.</span></div>
+</section>

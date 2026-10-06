@@ -1,0 +1,113 @@
+<!-- 04 시장조사 -->
+<title>감정로그 · 시장조사</title>
+<style>
+.src{margin-top:18px}
+.board{margin-top:26px;height:496px;display:grid;grid-template-columns:1fr 400px;column-gap:20px}
+.vr{background:var(--line)}
+.side{display:flex;flex-direction:column;min-width:0;border-radius:var(--pf-r-lg);background:var(--pf-white);box-shadow:var(--pf-shadow-card);padding:var(--pf-pad-card)}
+.side.pos{position:relative;background:var(--pf-purple-50);box-shadow:none;border:1px solid var(--pf-purple-100)}
+.side.pos:after{content:"";position:absolute;left:50%;bottom:-20px;width:1.5px;height:19px;background:var(--pf-purple-300)}
+.ph h3 em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-white);background:var(--accent);border-radius:var(--pf-r-pill);padding:1px 8px;margin-right:8px;vertical-align:2px}
+.ph h3{font-size:var(--pf-fs-h3);font-weight:700;letter-spacing:-.04em}
+.ph p{margin-top:4px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);line-height:1.4}
+.ph p b{font-weight:600;color:var(--point)}
+/* 서비스 표식 */
+  :root{--c1:#ee9f8d;--c2:#6fc3a6;--c3:#eeb35a}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:1px;background:var(--pf-line-strong)}
+.dot.c1{background:var(--c1)}
+.dot.c2{background:var(--c2)}
+.dot.c3{background:var(--c3)}
+.dot.rv{background:var(--pf-white);border:2px solid var(--accent);width:11px;height:11px;box-sizing:border-box}
+.dot.me{background:var(--point)}
+/* 비교표 */
+  table{margin-top:14px;width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;flex:1}
+th,td{text-align:left;vertical-align:middle;padding:0 10px;font-size:var(--pf-fs-body);line-height:1.4;word-break:keep-all}
+thead th{height:56px;font-size:var(--pf-fs-body);font-weight:700;color:var(--ink);border-bottom:1px solid var(--line);vertical-align:bottom;padding-bottom:10px}
+thead th small{display:block;font-size:var(--pf-fs-caption);font-weight:600;color:var(--point);letter-spacing:0;margin-bottom:2px}
+thead th:first-child{width:96px}
+tbody th{font-size:var(--pf-fs-body);font-weight:600;color:var(--ink2);padding-right:6px}
+tbody th i{display:flex;align-items:center;gap:5px;margin-top:5px;font-style:normal;font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700)}
+tbody th i em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-white);background:var(--pf-purple-500);border-radius:var(--pf-r-pill);padding:1px 8px}
+tbody td{color:var(--ink2);font-weight:500}
+tbody tr:not(:last-child) th,tbody tr:not(:last-child) td{border-bottom:1px solid var(--line)}
+tbody tr{height:33.3%}
+tbody tr.ax th{padding-top:0;padding-bottom:0}
+.rv-c{background:var(--pf-purple-50)}
+.me-c{background:var(--pf-purple-100)}
+thead .me-c{border-radius:var(--pf-r-md) var(--pf-r-md) 0 0;color:var(--point)}
+tbody tr:last-child .me-c{border-radius:0 0 var(--pf-r-md) var(--pf-r-md)}
+td.me-c{color:var(--point);font-weight:600}
+/* 4분면 */
+  .map{position:relative;margin:16px 6px 0;flex:1}
+.map .ax{position:absolute;background:var(--pf-purple-200)}
+.map .ax.x{left:0;right:0;top:50%;height:1px}
+.map .ax.y{top:0;bottom:0;left:50%;width:1px}
+.map .lb{position:absolute;font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2);white-space:nowrap}
+.lb.t{top:-2px;left:50%;transform:translate(8px,0)}
+.lb.b{bottom:-2px;left:50%;transform:translate(8px,0)}
+.lb.l{left:0;top:50%;transform:translateY(6px)}
+.lb.r{right:0;top:50%;transform:translateY(6px);text-align:right}
+.pt{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:5px}
+.pt i{width:14px;height:14px;border-radius:50%;background:var(--pf-line-strong)}
+.pt.c1 i{background:var(--c1)}
+.pt.c2 i{background:var(--c2)}
+.pt.c3 i{background:var(--c3)}
+.pt b{font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink2);white-space:nowrap}
+.pt small{font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);white-space:nowrap;margin-top:-3px}
+.pt.rival i{background:var(--pf-white);border:2px solid var(--accent)}
+.pt.rival b{color:var(--point)}
+.pt.me i{width:22px;height:22px;background:var(--point);box-shadow:var(--pf-shadow-ring)}
+.pt.me b{font-size:var(--pf-fs-body-strong);font-weight:700;color:var(--point)}
+.note{margin-top:10px;font-size:var(--pf-fs-caption);color:var(--ink3);font-weight:500}
+.src2{margin-top:10px;font-size:var(--pf-fs-caption);color:var(--ink3);font-weight:500;text-align:right}
+/* 기회 */
+.me-c,.me-c *,tbody th i,.opp em{color:var(--pf-purple-700)!important}
+.board{margin-top:28px!important;height:482px!important;grid-template-columns:1fr 406px!important;column-gap:24px!important}
+</style>
+<section class="slide">
+  <div class="eyebrow">Define · Market Research</div>
+  <h1>경쟁 서비스는 입력 · 축적 · 보상의 <em>간극을 일부만 풉니다</em>.</h1>
+  <p class="sub">하루콩은 기록을 가볍게 했지만 선택지가 단순하고, 무들은 기록을 그림으로 바꿨지만 화면 안에서 끝납니다. <b>비교한 서비스 중 감정의 흐름을 담아 손에 남는 결과로 돌려주는 곳은 없습니다.</b></p>
+<div class="cz" style="position:relative">
+
+
+  <div class="board">
+    <div class="side">
+      <div class="ph"><h3><em>01</em>경쟁 서비스 비교</h3><p>App Store · Google Play · 기사 기준 · 굿즈·포토북 등 앱 밖의 대안은 비교 범위에서 제외</p></div>
+      <table>
+        <thead><tr><th></th>
+          <th><span class="dot c1"></span>하루콩</th>
+          <th><span class="dot c2"></span>MOODA</th>
+          <th><span class="dot c3"></span>무디</th>
+          <th class="rv-c"><small>유사 서비스</small><span class="dot rv"></span>무들</th>
+          <th class="me-c"><small>우리 서비스</small><span class="dot me"></span>감정로그</th></tr></thead>
+        <tbody>
+          <tr><th>기록 방식<br><i><em>01</em>입력</i></th><td>기분·활동 콩 선택</td><td>질문형 일기</td><td>감정 기록</td><td class="rv-c">감정 선택 + 일기</td><td class="me-c">감정 선택 + 문장</td></tr>
+          <tr class="ax"><th>축적 방식<br><i><em>02</em>축적</i></th><td>날짜별 기록</td><td>방 꾸미기·스티커</td><td>무드 리포트</td><td class="rv-c">미술관 캘린더</td><td class="me-c">작품 아카이브</td></tr>
+          <tr><th>돌려주는 결과<br><i><em>03</em>보상</i></th><td>월간 통계 → 감정 흐름 확인</td><td>무드볼 → 나만의 공간</td><td>퀘스트 추천 → 다음 행동</td><td class="rv-c">AI 그림 + 편지 → 위로</td><td class="me-c">감정별 그림·캐릭터 → 작품 + 굿즈로 소유</td></tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="side pos">
+      <div class="ph"><h3><em>02</em>포지셔닝</h3><p>가로축 <b>보상</b> · 세로축 <b>축적</b> (01 표 기준)</p></div>
+      <div class="map">
+        <i class="ax x"></i><i class="ax y"></i>
+        <span class="lb t">쌓여서 내 것이 됨</span>
+        <span class="lb b">보고 끝남</span>
+        <span class="lb l">그대로 보여줌</span>
+        <span class="lb r">새 결과물로 바꿈</span>
+        <div class="pt c2" style="left:22%;top:25%"><i></i><b>MOODA</b><small>공간·수집</small></div>
+        <div class="pt c1" style="left:22%;top:74%"><i></i><b>하루콩</b><small>캘린더·통계</small></div>
+        <div class="pt c3" style="left:72%;top:74%"><i></i><b>무디</b><small>퀘스트·추천</small></div>
+        <div class="pt rival" style="left:66%;top:41%"><i></i><b>무들</b><small>그림 + 미술관</small></div>
+        <div class="pt me" style="left:85%;top:14%"><i></i><b>감정로그</b></div>
+      </div>
+      <p class="note">※ 점유율이 아닌 핵심 경험 기준의 정성적 포지셔닝</p>
+    </div>
+    
+    </div>
+</div>
+
+
+  <div class="opp"><em>INSIGHT</em><span>입력 · 축적 · 보상을 하나로 잇는 <b>'감정 창작 구조'</b>를 제안합니다.</span></div></section>

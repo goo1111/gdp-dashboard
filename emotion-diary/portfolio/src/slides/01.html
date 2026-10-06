@@ -1,0 +1,62 @@
+<!-- 01 인트로 -->
+<title>감정로그 · 인트로</title>
+<style>
+.slide{position:relative;width:1440px;height:810px;background:var(--pf-bg);color:var(--pf-ink);overflow:hidden;letter-spacing:-.03em}
+.bg{display:none}
+/* 왼쪽 텍스트 */
+  .L{position:absolute;left:88px;top:99px;bottom:64px;width:660px;display:flex;flex-direction:column}
+.eyebrow{font-size:var(--pf-fs-caption);font-weight:800;letter-spacing:.14em;color:var(--pf-purple-500)}
+h1{margin-top:0;font-size:var(--pf-fs-display);line-height:1.35;font-weight:700;letter-spacing:-.045em}
+h1 em{font-style:normal;color:var(--pf-purple-600)}
+.meta{margin-top:40px;display:grid;grid-template-columns:104px 1fr;row-gap:10px;font-size:var(--pf-fs-body);line-height:1.5}
+.meta dt{color:var(--pf-ink3);font-weight:500}
+.meta dd{color:var(--pf-ink);font-weight:500}
+.qa{margin-top:auto;display:flex;flex-direction:column;gap:26px}
+.qa b{display:block;font-size:var(--pf-fs-lead);font-weight:700;margin-bottom:8px}
+.qa p{font-size:var(--pf-fs-body-strong);line-height:1.7;color:var(--pf-ink2)}
+.qa .dd{display:block;color:var(--pf-purple-500);font-weight:600;font-size:var(--pf-fs-body-strong);margin-bottom:2px}
+.R{position:absolute;left:780px;top:0;width:620px;height:810px}
+.grid{position:absolute;left:0;top:-40px;display:grid;grid-template-columns:repeat(3,188px);gap:14px;transform:rotate(-6deg);transform-origin:center}
+.col{display:flex;flex-direction:column;gap:14px}
+.col:nth-child(2){margin-top:90px}
+.col:nth-child(3){margin-top:30px}
+.tile{position:relative;width:188px;height:235px;border-radius:var(--pf-r-lg);overflow:hidden;background:var(--pf-white);
+        box-shadow:var(--pf-shadow-card)}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile span{position:absolute;left:10px;bottom:10px;padding:4px 9px;border-radius:var(--pf-r-pill);background:rgba(255,255,255,.92);font-size:var(--pf-fs-label);font-weight:800;color:var(--pf-ink)}
+.tile span i{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:1px}
+.tile.hero{outline:3px solid var(--pf-ink);outline-offset:-3px}
+.fade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,var(--pf-bg) 0,rgba(251,250,248,0) 14%,rgba(251,250,248,0) 86%,var(--pf-bg) 100%)}
+.fade2{position:absolute;left:-60px;top:0;bottom:0;width:120px;pointer-events:none;background:linear-gradient(90deg,var(--pf-bg),rgba(251,250,248,0))}
+@media print{body{background:var(--pf-white)}}
+</style>
+<section class="slide">
+  <div class="R"><div class="grid"><div class="col"><div class="tile"><img alt="설렘 감정 작품" src="asset:3ee1c6f3948d.webp"><span><i style="background:#f05a8a"></i>설렘</span></div><div class="tile"><img alt="평온 감정 작품" src="asset:7f14123582d7.webp"><span><i style="background:#8bd0bd"></i>평온</span></div><div class="tile"><img alt="슬픔 감정 작품" src="asset:09dc134c8b80.webp"><span><i style="background:#80a9dc"></i>슬픔</span></div></div><div class="col"><div class="tile hero"><img alt="화남 감정 작품" src="asset:1afb90eede94.webp"><span><i style="background:#e66f5c"></i>화남</span></div><div class="tile"><img alt="기쁨 감정 작품" src="asset:923048a40983.webp"><span><i style="background:#f7bd4e"></i>기쁨</span></div><div class="tile"><img alt="불안 감정 작품" src="asset:f07e10af2777.webp"><span><i style="background:#dfa292"></i>불안</span></div></div><div class="col"><div class="tile"><img alt="복합 감정 작품" src="asset:548ff620c7a9.webp"><span><i style="background:#d19cdb"></i>복합</span></div><div class="tile"><img alt="무기력 감정 작품" src="asset:1305e09c0ac5.webp"><span><i style="background:#9ca9b1"></i>무기력</span></div><div class="tile"><img alt="화남 감정 작품" src="asset:f2c463c271bd.webp"><span><i style="background:#e66f5c"></i>화남 · 캐릭터</span></div></div></div><div class="fade"></div><div class="fade2"></div></div>
+  <div class="L">
+    <h1>오늘 기록한 감정이 쌓여,<br><em>나만의 작품</em>이 되는 감정로그</h1>
+
+    <dl class="meta">
+      <dt>프로젝트 구분</dt><dd>팀 프로젝트 (2인)</dd>
+      <dt>작업 기간</dt><dd>2026.06 – 2026.10</dd>
+      <dt>대상 사용자</dt><dd>감정 기록을 시작했지만 이어가지 못한 20~30대</dd>
+      <dt>담당 범위</dt><dd>데스크 리서치 · 문제 정의 · IA · 기능 구조 설계 · 프로토타입 · 디자인 시스템 · 사용성 테스트 설계</dd>
+    </dl>
+
+    <div class="qa">
+      <div>
+        <b>프로젝트 목표</b>
+        <p>감정 기록을 창작으로 확장해,<br>기록을 지속할 동기를 제공하는 것을 목표로 했습니다.</p>
+      </div>
+      <div>
+        <b>어떻게 접근했나요?</b>
+        <p><span class="dd">Double Diamond | Discover → Define → Develop → Deliver</span>
+        입력 · 축적 · 보상이 끊기는 문제를 구체화하고,<br>이를 기록 → 축적 → 창작 → 소유로 잇는 경험 구조를 설계했습니다.</p>
+      </div>
+      <div>
+        <b>무엇을 확인했나요?</b>
+        <p>프로토타입으로 감정 데이터에 따라 작품의 바탕 · 색 · 구도가 달라지는지,<br>기록 → 작품 생성 → 아카이브 저장까지 흐름이 끊기지 않는지 점검했습니다.</p>
+      </div>
+    </div>
+  </div>
+
+</section>

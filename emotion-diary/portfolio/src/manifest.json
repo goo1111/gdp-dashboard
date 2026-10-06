@@ -1,0 +1,80 @@
+[
+ {
+  "file": "01.html",
+  "label": "01 인트로",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "02.html",
+  "label": "02 배경",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "03.html",
+  "label": "03 리서치 · 문제 정의",
+  "font": "pretendard-subset.css",
+  "bar": true
+ },
+ {
+  "file": "04.html",
+  "label": "04 시장조사",
+  "font": "pretendard-subset.css",
+  "bar": true
+ },
+ {
+  "file": "05.html",
+  "label": "05 컨셉모델",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "06.html",
+  "label": "06 IA · 기능 구조",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "07.html",
+  "label": "07 HOME",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "08.html",
+  "label": "08 CREATE",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "09.html",
+  "label": "09 CREATE · Variations",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "10.html",
+  "label": "10 ARCHIVE",
+  "font": "pretendard-subset.css",
+  "bar": false
+ },
+ {
+  "file": "11.html",
+  "label": "11 디자인 시스템",
+  "font": "pretendard-subset.css",
+  "bar": true
+ },
+ {
+  "file": "12.html",
+  "label": "12 검증 계획 · 다음 단계",
+  "font": "pretendard-subset.css",
+  "bar": true
+ },
+ {
+  "file": "13.html",
+  "label": "13 회고",
+  "font": "pretendard-subset.css",
+  "bar": true
+ }
+]

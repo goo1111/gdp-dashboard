@@ -1,0 +1,118 @@
+<!-- 02 배경 -->
+<title>감정로그 · 배경</title>
+<style>
+.step{height:38px;border-radius:var(--pf-r-md);display:flex;align-items:center;justify-content:center;gap:8px;font-size:var(--pf-fs-body);font-weight:600;color:var(--ink);background:var(--pf-purple-100)}
+.c2 .step{background:var(--pf-purple-300)}
+.c3 .step{background:var(--pf-purple-600);color:var(--pf-white)}
+.card h3{margin-top:4px;font-size:var(--pf-fs-h3);font-weight:700;line-height:1.35;letter-spacing:-.04em}
+.src{margin-top:18px}
+/* 공통 말풍선 */
+  .quote{padding:12px 14px;border-radius:var(--pf-r-md);background:var(--soft);font-size:var(--pf-fs-body);line-height:1.5;font-weight:500;color:var(--ink2);word-break:keep-all}
+.quote:before{content:"“";color:var(--accent);font-weight:700;margin-right:2px}
+.quote:after{content:"”";color:var(--accent);font-weight:700;margin-left:2px}
+/* 카드 1 */
+  .num{display:flex;flex-direction:column;gap:6px}
+.num b{font-size:var(--pf-fs-stat);font-weight:700;line-height:1;letter-spacing:-.03em;color:var(--point)}
+.num span{font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3)}
+.bars{display:flex;flex-direction:column;gap:13px}
+.bar{display:grid;grid-template-columns:56px 1fr 40px;align-items:center;gap:10px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink2)}
+.bar i{display:block;height:8px;border-radius:var(--pf-r-pill);background:var(--soft);overflow:hidden}
+.bar i s{display:block;height:100%;border-radius:var(--pf-r-pill);background:var(--pf-purple-200)}
+.bar.hi i s{background:var(--point)}
+.bar b{text-align:right;font-weight:600;color:var(--ink)}
+.bar.hi b{color:var(--point)}
+.kv{display:flex;flex-direction:column;gap:10px}
+.kv div{display:flex;justify-content:space-between;padding:10px 14px;border-radius:var(--pf-r-md);background:var(--soft);font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink2)}
+.kv div b{font-weight:700;color:var(--ink)}
+.people{display:grid;grid-template-columns:repeat(20,9px);gap:5px}
+.people i{width:9px;height:9px;border-radius:50%;background:var(--pf-purple-200)}
+.people i.on{background:var(--point)}
+/* 카드 2 */
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{height:30px;padding:0 12px;border-radius:var(--pf-r-pill);background:var(--soft);color:var(--ink3);font-size:var(--pf-fs-caption);font-weight:500;display:inline-flex;align-items:center}
+.chips span.q{background:var(--pf-white);border:1px dashed var(--accent);color:var(--accent);font-weight:600}
+/* 카드 3 */
+  .flow{display:flex;align-items:center;justify-content:center;gap:18px}
+.flow figure{display:flex;flex-direction:column;align-items:center;gap:6px}
+.flow figcaption{font-size:var(--pf-fs-label);font-weight:500;color:var(--ink3)}
+.dots{display:grid;grid-template-columns:repeat(7,16px);gap:6px}
+.dots i{width:16px;height:16px;border-radius:var(--pf-r-xs);background:var(--soft)}
+.dots i.a{background:var(--pf-purple-300)}
+.dots i.b{background:#f3bcad}
+.dots i.c{background:#acdccb}
+.c3 .viz{grid-template-rows:1fr auto}
+.c3 .flow{align-self:center;margin-top:-6px}
+.flow .arr{color:var(--ink4);font-size:var(--pf-fs-lead)}
+.graph{width:118px;height:38px;display:flex;align-items:flex-end;gap:5px}
+.graph u{flex:1;border-radius:var(--pf-r-xs) var(--pf-r-xs) 0 0;background:var(--pf-purple-300)}
+/* 화살표 + 인사이트 */
+  .down{height:28px;display:flex;justify-content:center}
+.down i{width:1px;height:100%;background:var(--pf-purple-300);position:relative}
+.down i:after{content:"";position:absolute;left:50%;bottom:0;width:7px;height:7px;border-right:1px solid var(--pf-purple-300);border-bottom:1px solid var(--pf-purple-300);transform:translateX(-50%) rotate(45deg)}
+.ins{height:60px;border-radius:var(--pf-r-md);display:flex;align-items:center;justify-content:center;text-align:center;padding:0 18px;
+       font-size:var(--pf-fs-lead);font-weight:600;line-height:1.4;background:var(--pf-purple-100);color:var(--ink);border:1px solid var(--pf-purple-200)}
+.cols{margin-top:28px}
+.card{height:404px}
+.viz{height:236px}
+</style>
+<section class="slide">
+  <div class="eyebrow">Discover · Background</div>
+  <h1>감정을 기록하려는 사람은 많지만, <em>대부분 한 달을 넘기지 못합니다</em>.</h1>
+  <p class="sub">기록 수요는 크지만 <b>30일 뒤에도 앱을 여는 사용자는 3.3%</b>에 그치고, 감정을 말로 옮기기 어려운 20~30대에게는 기록이 더 어렵습니다.</p>
+
+  <div class="cols">
+    <div class="col c1">
+      <div class="step"><em>01</em>수요</div>
+      <div class="card">
+        <span class="k">감정 기록 앱 하루콩의 1년</span>
+        <h3>많은 기록 수요</h3>
+        <div class="viz">
+          <div class="num"><b>2,700만 건</b><span>1년 동안 쌓인 감정 기록</span></div>
+          <div class="bot"><div class="kv">
+            <div><span>하루 평균 기록</span><b>약 7.4만 건</b></div>
+            <div><span>감정 아이콘을 입력한 사용자</span><b>200만 명 이상</b></div>
+          </div></div>
+        </div>
+        <span class="src">머니투데이, 2024.01 · 블루시그넘 데이터 백서</span>
+      </div>
+      <div class="down"><i></i></div>
+      <div class="ins">감정을 기록하려는 수요는 큽니다</div>
+    </div>
+
+    <div class="col c2">
+      <div class="step"><em>02</em>이탈</div>
+      <div class="card">
+        <span class="k">멘탈헬스 앱 설치 후 30일</span>
+        <h3>빠른 이탈</h3>
+        <div class="viz">
+          <div class="num"><b>3.3%</b><span>30일 뒤에도 앱을 여는 사용자 (중앙값)</span></div>
+          <div class="bot"><div class="flow">
+            <figure><div class="people"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><figcaption>설치 100명 중 30일 뒤 약 3명</figcaption></figure>
+          </div></div>
+        </div>
+        <span class="src">Baumel et al., JMIR 2019 · 앱 59개 분석</span>
+      </div>
+      <div class="down"><i></i></div>
+      <div class="ins">30일 뒤 남는 사용자는 100명 중 3명입니다</div>
+    </div>
+
+    <div class="col c3">
+      <div class="step"><em>03</em>대상</div>
+      <div class="card">
+        <span class="k">청년층과 중장년층 각 400명 비교</span>
+        <h3>감정을 말로 옮기기 어려운 20~30대</h3>
+        <div class="viz">
+          <div class="num"><b>청년층 ↑</b><span>감정을 인식하고 말로 표현하는 어려움이 50~60대보다 유의하게 높음</span></div>
+          <div class="bot"><div class="kv">
+            <div><span>20~39세</span><b>400명</b></div>
+            <div><span>50~69세</span><b>400명</b></div>
+          </div></div>
+        </div>
+        <span class="src">권소영 외, 2023 · 한국판 감정표현불능증 척도(TAS-20K)</span>
+      </div>
+      <div class="down"><i></i></div>
+      <div class="ins">그래서 20~30대를 핵심 대상으로 정했습니다</div>
+    </div>
+  </div>
+
+</section>
