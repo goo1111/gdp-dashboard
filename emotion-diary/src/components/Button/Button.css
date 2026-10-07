@@ -1,0 +1,48 @@
+/* Button — Figma: Components/Button. 값은 모두 design-tokens.css 토큰 */
+.ds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  cursor: pointer;
+}
+.ds-button--lg {
+  height: var(--size-button-lg);
+  padding: 0 var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-body-md);
+}
+.ds-button--md {
+  height: var(--size-button-md);
+  padding: 0 var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-body-sm);
+}
+.ds-button--primary {
+  background: var(--color-action-primary);
+  border-color: var(--color-action-primary);
+  color: var(--color-text-inverse);
+}
+.ds-button--secondary {
+  background: var(--color-bg-surface);
+  border-color: var(--color-border-default);
+  color: var(--color-text-primary);
+}
+.ds-button:disabled {
+  background: var(--color-bg-subtle);
+  border-color: var(--color-bg-subtle);
+  color: var(--color-text-disabled);
+  cursor: default;
+}
+.ds-button--full {
+  width: 100%;
+}
+.ds-button:focus-visible {
+  outline: 2px solid var(--color-action-primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,91 @@
+/* 감정로그 포트폴리오 디자인 시스템 — 모든 장이 이 파일만 참조해요. 규칙은 PORTFOLIO-DS.md */
+:root{
+  --pf-fs-label:12px;
+  --pf-fs-caption:13px;
+  --pf-fs-body:14px;
+  --pf-fs-body-strong:15px;
+  --pf-fs-lead:16px;
+  --pf-fs-h4:18px;
+  --pf-fs-h3:20px;
+  --pf-fs-h2:24px;
+  --pf-fs-stat:28px;
+  --pf-fs-h1:32px;
+  --pf-fs-display:40px;
+  --pf-white:#ffffff;
+  --pf-bg:#fbfaf8;
+  --pf-surface-2:#f4f3f6;
+  --pf-ink:#18181c;
+  --pf-ink2:#55535f;
+  --pf-ink3:#6a6874;
+  --pf-ink4:#74727e;
+  --pf-ink5:#a9a6b2;
+  --pf-line:#ece9f1;
+  --pf-line-strong:#d9d6e0;
+  --pf-device:#1d1b22;
+  --pf-purple-50:#f5f3fa;
+  --pf-purple-100:#efecfa;
+  --pf-purple-200:#e3def6;
+  --pf-purple-300:#c9bff0;
+  --pf-purple-350:#b3a8e8;
+  --pf-purple-400:#a497e0;
+  --pf-purple-500:#8a7bd8;
+  --pf-purple-600:#6f5fc9;
+  --pf-purple-700:#5a4ab3;
+  --pf-purple-800:#4a3d9e;
+  --pf-r-xs:4px;
+  --pf-r-sm:8px;
+  --pf-r-md:12px;
+  --pf-r-lg:18px;
+  --pf-r-device:26px;
+  --pf-r-pill:999px;
+  --pf-shadow-card:0 16px 36px -26px rgba(60,40,90,.3),0 0 0 1px rgba(0,0,0,.035);
+  --pf-shadow-float:0 12px 26px -20px rgba(60,40,90,.4),0 0 0 1px rgba(0,0,0,.04);
+  --pf-shadow-device:0 22px 38px -26px rgba(40,30,70,.45);
+  --pf-shadow-device-hl:0 0 0 6px rgba(111,95,201,.13),0 26px 44px -26px rgba(60,40,120,.5);
+  --pf-shadow-ring:0 0 0 5px rgba(111,95,201,.15);
+  --pf-pad-card:24px;
+  --pf-margin:88px;
+  --pf-gutter:24px;
+  --pf-col3:405px;
+  --pf-content-top:204px;
+  --pf-content-end:686px;
+  --pf-content-end-nobar:746px;
+  /* legacy aliases used by slide markup */
+  --ink:var(--pf-ink);--ink2:var(--pf-ink2);--ink3:var(--pf-ink3);--ink4:var(--pf-ink4);--line:var(--pf-line);
+  --accent:var(--pf-purple-500);--point:var(--pf-purple-600);--soft:var(--pf-purple-50);
+}
+/* ---- chrome: reset, canvas, header, insight bar ---- */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--pf-bg)}
+body{position:relative;font-family:'Pretendard Variable',Pretendard,-apple-system,'Apple SD Gothic Neo',sans-serif;overflow:hidden}
+#wrap{position:absolute;left:0;top:0;width:1440px;height:810px;transform-origin:0 0}
+:root{--ink:var(--pf-ink);--ink2:var(--pf-ink2);--ink3:var(--pf-ink3);--ink4:var(--pf-ink4);--line:var(--pf-line);--accent:var(--pf-purple-500);--point:var(--pf-purple-600);--soft:var(--pf-purple-50)}
+.slide{position:relative;width:1440px;height:810px;background:var(--pf-bg);color:var(--ink);overflow:hidden;letter-spacing:-.03em;padding:72px 88px 0}
+/* 헤더: 3단 위계 (아이브로 13/700 · 타이틀 32/700 · 서브 16/400) */
+  .eyebrow{font-size:var(--pf-fs-caption);font-weight:700;letter-spacing:.06em;color:var(--point)}
+h1{margin-top:12px;font-size:var(--pf-fs-h1);line-height:1.3;font-weight:700;letter-spacing:-.045em}
+.sub{margin-top:10px;font-size:var(--pf-fs-lead);line-height:1.6;color:var(--ink2);font-weight:400}
+.sub b{color:var(--point);font-weight:600}
+.sub .cite{font-size:var(--pf-fs-caption);color:var(--ink4);font-weight:500}
+/* 3열 그리드 */
+  .cols{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.col{display:flex;flex-direction:column}
+.step{height:38px;border-radius:var(--pf-r-md);display:flex;align-items:center;justify-content:center;gap:8px;font-size:var(--pf-fs-body);font-weight:600;color:var(--pf-white);background:var(--accent)}
+.step em{font-style:normal;font-weight:500;opacity:.72}
+.c2 .step{background:var(--pf-purple-400)}
+.c3 .step{background:var(--pf-purple-350)}
+/* 카드: 라벨 → 제목 → 시각 영역(고정 높이) → 출처 */
+  .card{margin-top:12px;height:330px;border-radius:var(--pf-r-lg);background:var(--pf-white);
+        box-shadow:var(--pf-shadow-card);
+        padding:26px 28px 20px;display:grid;grid-template-rows:auto auto 1fr auto}
+.k{font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);line-height:1.4}
+.card h3{margin-top:4px;font-size:var(--pf-fs-h2);font-weight:700;line-height:1.35;letter-spacing:-.04em}
+.viz{margin-top:18px;height:172px;display:grid;grid-template-rows:auto 1fr}
+.viz>.bot{align-self:end;display:flex;flex-direction:column;gap:10px}
+.src{margin-top:18px}
+.src{padding-top:12px;border-top:1px solid var(--line);font-size:var(--pf-fs-label);color:var(--ink4);font-weight:500}
+.opp{position:absolute;left:var(--pf-margin);right:var(--pf-margin);bottom:44px;height:56px;margin:0;border-radius:var(--pf-r-md);background:var(--pf-purple-100);border:1px solid var(--pf-purple-200);display:flex;align-items:center;padding:0 28px;gap:18px;font-size:var(--pf-fs-lead);font-weight:600;color:var(--pf-ink)}
+.opp em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;letter-spacing:.06em;color:var(--pf-purple-700)}
+.opp span{font-size:var(--pf-fs-lead);font-weight:600;color:var(--pf-ink)}
+.opp b{color:var(--pf-purple-700)}
+.slide h1 em{font-style:normal;color:var(--pf-purple-600)}

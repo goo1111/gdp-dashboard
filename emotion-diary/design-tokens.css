@@ -1,0 +1,97 @@
+/* ============================================================
+   감정로그 디자인 토큰 v71
+   구조: Primitive(값) → Semantic(역할) → 컴포넌트는 Semantic만 참조
+   네이밍: Figma 변수 color/text/primary ↔ CSS --color-text-primary
+   ============================================================ */
+:root{
+  /* ---------- Primitive · 색 ---------- */
+  --primitive-neutral-0:#ffffff;
+  --primitive-neutral-50:#faf9f4;
+  --primitive-neutral-100:#f3f0eb;
+  --primitive-neutral-200:#e4dfda;
+  --primitive-neutral-250:#dedbd8;
+  --primitive-neutral-400:#a39b95;
+  --primitive-neutral-500:#6f6964;
+  --primitive-neutral-600:#5f5a56;
+  --primitive-neutral-900:#1c1a18;
+  --primitive-neutral-950:#2b2733;
+
+  /* 감정 팔레트: 50=tint · 400=fill · 600=border · 800=text */
+  --primitive-rose-50:#fff1f5;   --primitive-rose-400:#f05a8a;   --primitive-rose-600:#d93d6a;   --primitive-rose-800:#972047;
+  --primitive-mint-50:#eaf8f3;   --primitive-mint-400:#8bd0bd;   --primitive-mint-600:#55aa92;   --primitive-mint-800:#347565;
+  --primitive-amber-50:#fff4d4;  --primitive-amber-400:#f7bd4e;  --primitive-amber-600:#d99400;  --primitive-amber-800:#8c5d00;
+  --primitive-lilac-50:#f8ecfb;  --primitive-lilac-400:#d19cdb;  --primitive-lilac-600:#a96abb;  --primitive-lilac-800:#744789;
+  --primitive-sky-50:#eaf3fc;    --primitive-sky-400:#80a9dc;    --primitive-sky-600:#5689c1;    --primitive-sky-800:#426d9e;
+  --primitive-apricot-50:#ffede8;--primitive-apricot-400:#dfa292;--primitive-apricot-600:#bd6552;--primitive-apricot-800:#954b3e;
+  --primitive-slate-50:#eef2f4;  --primitive-slate-400:#9ca9b1;  --primitive-slate-600:#718089;  --primitive-slate-800:#59666e;
+  --primitive-coral-50:#ffeae6;  --primitive-coral-300:#f59e8b;  --primitive-coral-400:#e66f5c;  --primitive-coral-600:#c8493d;  --primitive-coral-800:#a23b32;
+
+  /* 홈 히어로 배경용 파스텔 */
+  --primitive-pastel-peach:#fdba74;  --primitive-pastel-violet:#c4b5fd; --primitive-pastel-blue:#93c5fd;
+  --primitive-pastel-lime:#bef264;   --primitive-pastel-pink:#f9a8d4;   --primitive-pastel-teal:#99f6e4;
+  --primitive-pastel-yellow:#fde68a; --primitive-pastel-rose:#fda4af;   --primitive-pastel-lavender:#ddd6fe;
+  --primitive-pastel-cyan:#bae6fd;   --primitive-pastel-red:#fca5a5;
+
+  /* ---------- Semantic · 색 ---------- */
+  --color-text-primary:var(--primitive-neutral-900);
+  --color-text-secondary:var(--primitive-neutral-600);
+  --color-text-tertiary:var(--primitive-neutral-500);   /* 캔버스·카드·서브 배경 모두 4.5:1 이상 */
+  --color-text-disabled:var(--primitive-neutral-400);   /* 비활성 상태에만 사용 */
+  --color-text-inverse:var(--primitive-neutral-0);
+  --color-bg-canvas:var(--primitive-neutral-50);
+  --color-bg-surface:var(--primitive-neutral-0);
+  --color-bg-subtle:var(--primitive-neutral-100);
+  --color-border-default:var(--primitive-neutral-200);
+  --color-border-card:var(--primitive-neutral-250);
+  --color-action-primary:var(--primitive-neutral-950);   /* 주요 버튼 배경, 달력 선택 */
+
+  --color-emotion-flutter-fill:var(--primitive-rose-400);   --color-emotion-flutter-tint:var(--primitive-rose-50);   --color-emotion-flutter-border:var(--primitive-rose-600);   --color-emotion-flutter-text:var(--primitive-rose-800);
+  --color-emotion-calm-fill:var(--primitive-mint-400);      --color-emotion-calm-tint:var(--primitive-mint-50);      --color-emotion-calm-border:var(--primitive-mint-600);      --color-emotion-calm-text:var(--primitive-mint-800);
+  --color-emotion-joy-fill:var(--primitive-amber-400);      --color-emotion-joy-tint:var(--primitive-amber-50);      --color-emotion-joy-border:var(--primitive-amber-600);      --color-emotion-joy-text:var(--primitive-amber-800);
+  --color-emotion-complex-fill:var(--primitive-lilac-400);  --color-emotion-complex-tint:var(--primitive-lilac-50);  --color-emotion-complex-border:var(--primitive-lilac-600);  --color-emotion-complex-text:var(--primitive-lilac-800);
+  --color-emotion-sad-fill:var(--primitive-sky-400);        --color-emotion-sad-tint:var(--primitive-sky-50);        --color-emotion-sad-border:var(--primitive-sky-600);        --color-emotion-sad-text:var(--primitive-sky-800);
+  --color-emotion-anxious-fill:var(--primitive-apricot-400);--color-emotion-anxious-tint:var(--primitive-apricot-50);--color-emotion-anxious-border:var(--primitive-apricot-600);--color-emotion-anxious-text:var(--primitive-apricot-800);
+  --color-emotion-empty-fill:var(--primitive-slate-400);    --color-emotion-empty-tint:var(--primitive-slate-50);    --color-emotion-empty-border:var(--primitive-slate-600);    --color-emotion-empty-text:var(--primitive-slate-800);
+  --color-emotion-angry-fill:var(--primitive-coral-400);    --color-emotion-angry-tint:var(--primitive-coral-50);    --color-emotion-angry-border:var(--primitive-coral-600);    --color-emotion-angry-text:var(--primitive-coral-800);
+
+  --color-emotion-flutter-glow-start:var(--primitive-pastel-peach);  --color-emotion-flutter-glow-end:var(--primitive-pastel-violet);
+  --color-emotion-calm-glow-start:var(--primitive-pastel-blue);      --color-emotion-calm-glow-end:var(--primitive-pastel-lime);
+  --color-emotion-joy-glow-start:var(--primitive-pastel-peach);      --color-emotion-joy-glow-end:var(--primitive-pastel-pink);
+  --color-emotion-complex-glow-start:var(--primitive-pastel-pink);   --color-emotion-complex-glow-end:var(--primitive-pastel-blue);
+  --color-emotion-sad-glow-start:var(--primitive-pastel-violet);     --color-emotion-sad-glow-end:var(--primitive-pastel-teal);
+  --color-emotion-anxious-glow-start:var(--primitive-pastel-yellow); --color-emotion-anxious-glow-end:var(--primitive-pastel-rose);
+  --color-emotion-empty-glow-start:var(--primitive-pastel-lavender); --color-emotion-empty-glow-end:var(--primitive-pastel-cyan);
+  --color-emotion-angry-glow-start:var(--primitive-coral-300);       --color-emotion-angry-glow-end:var(--primitive-pastel-red);
+
+  /* ---------- 텍스트 스타일 (Pretendard) ---------- */
+  --font-family-base:"Pretendard","Pretendard Variable","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;
+  --font-size-caption-sm:12px;  /* 최소 크기 */
+  --font-size-caption-lg:13px;
+  --font-size-body-sm:14px;
+  --font-size-body-md:15px;
+  --font-size-body-lg:16px;
+  --font-size-title-sm:18px;
+  --font-size-title-md:20px;
+  --font-size-title-lg:24px;
+  --font-size-display-sm:28px;
+  --font-size-display-lg:32px;
+  --font-weight-regular:400;
+  --font-weight-semibold:600;
+  --font-weight-bold:700;
+
+  /* ---------- 모서리 ---------- */
+  --radius-xs:4px; --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px; --radius-2xl:24px; --radius-full:999px;
+
+  /* ---------- 간격 ---------- */
+  --spacing-2xs:2px; --spacing-xs:4px; --spacing-sm:8px; --spacing-md:12px; --spacing-lg:16px; --spacing-xl:20px; --spacing-2xl:24px; --spacing-3xl:32px; --spacing-4xl:40px; --spacing-5xl:48px;
+
+  /* ---------- 크기 ---------- */
+  --size-touch-min:44px;  /* 누를 수 있는 요소의 최소 너비·높이 */
+  --size-button-lg:48px;
+  --size-button-md:40px;
+
+  /* ---------- 이펙트 ---------- */
+  --shadow-sm:0 1px 3px rgba(28,26,24,.08);
+  --shadow-md:0 4px 8px rgba(28,26,24,.12);
+  --shadow-lg:0 8px 24px rgba(28,26,24,.16);
+}

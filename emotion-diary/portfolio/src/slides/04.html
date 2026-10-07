@@ -1,0 +1,105 @@
+<!-- 04 문제 정의 -->
+<title>감정로그 · 문제 정의</title>
+<style>
+.src{margin-top:18px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3)}
+.meta b{font-weight:600;color:var(--ink2)}
+.meta .scope{font-size:var(--pf-fs-caption);color:var(--ink3);background:var(--pf-line);border-radius:var(--pf-r-pill);padding:2px 10px}
+.grid{margin-top:12px;display:grid;grid-template-columns:600px 1fr 600px;align-items:start}
+.pn{border-radius:var(--pf-r-lg);overflow:hidden;background:var(--pf-white);box-shadow:var(--pf-shadow-card);height:416px}
+.ph{height:42px;display:flex;align-items:center;justify-content:center;font-size:var(--pf-fs-body);font-weight:600}
+.L .ph{background:var(--pf-line);color:var(--ink2)}
+.R .ph{background:var(--pf-purple-600);color:var(--pf-white)}
+.R .ph span{font-weight:500;opacity:.85;margin-left:6px}
+.rw{display:grid;grid-template-columns:66px 1fr;column-gap:16px;padding:0 32px}
+.L .rw{margin-top:22px}
+.R .rw{margin-top:30px}
+.tg{margin-top:6px;display:flex;align-items:center;gap:6px;font-size:var(--pf-fs-caption);font-weight:700;color:var(--pf-purple-700);white-space:nowrap}
+.tg em{font-style:normal;font-size:var(--pf-fs-label);font-weight:700;color:var(--pf-white);background:var(--pf-purple-500);border-radius:var(--pf-r-pill);padding:1px 8px}
+.big{font-size:var(--pf-fs-stat);font-weight:700;letter-spacing:-.03em;color:var(--pf-purple-700);line-height:1.15}
+.q{margin-top:6px;font-size:var(--pf-fs-body-strong);font-weight:600;color:var(--ink);line-height:1.45;word-break:keep-all}
+.sm{margin-top:5px;font-size:var(--pf-fs-caption);font-weight:500;color:var(--ink3);line-height:1.5;word-break:keep-all}
+.t{font-size:var(--pf-fs-h3);font-weight:700;color:var(--ink);letter-spacing:-.03em}
+.st{margin-top:4px;font-size:var(--pf-fs-body);font-weight:600;color:var(--ink2)}
+.ds{margin-top:4px;font-size:var(--pf-fs-body);font-weight:500;color:var(--ink3);line-height:1.5;word-break:keep-all}
+.chev{height:416px;display:flex;align-items:center;justify-content:center;gap:2px}
+.chev i{width:16px;height:16px;border-top:3px solid var(--pf-purple-300);border-right:3px solid var(--pf-purple-300);transform:rotate(45deg)}
+.chev i:nth-child(2){border-color:var(--pf-purple-350)}
+.chev i:nth-child(3){border-color:var(--pf-purple-500)}
+.bt{margin-top:14px;display:grid;grid-template-columns:600px 1fr 600px}
+.uv{position:relative;height:84px;border-radius:var(--pf-r-md);background:var(--pf-line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.uv:before{content:"";position:absolute;top:-6px;left:50%;width:10px;height:10px;background:var(--pf-purple-600);transform:translateX(-50%) rotate(45deg);border:2px solid var(--pf-bg)}
+.uv small{font-size:var(--pf-fs-caption);font-weight:600;color:var(--ink3)}
+.uv p{margin-top:5px;font-size:var(--pf-fs-lead);font-weight:700;color:var(--pf-purple-700);letter-spacing:-.03em}
+.cl{grid-column:3;height:84px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:var(--pf-fs-lead);line-height:1.6;font-weight:600;color:var(--ink2)}
+.cl b{color:var(--pf-purple-700)}
+.pn,.chev{height:384px}
+.R .rw{margin-top:20px}
+.L .rw{margin-top:18px}
+.bt{margin-top:12px;grid-template-columns:1fr}
+.uv{height:52px;flex-direction:row;gap:14px}
+.uv:before{display:none}
+.uv p{margin-top:0}
+.meta{margin-top:28px;line-height:18px}
+.pn,.chev{height:380px}
+.pn{display:flex;flex-direction:column}
+.pn .rw{flex:1;margin-top:0!important;align-items:center;padding-top:0;padding-bottom:0}
+.pn .ph+.rw{margin-top:8px!important}
+.pn .rw:last-child{margin-bottom:14px}
+.tg{margin-top:0;align-self:center}
+.big{font-size:var(--pf-fs-h3)!important;line-height:1.3!important;letter-spacing:-.03em}
+.q{margin-top:4px!important;font-size:var(--pf-fs-body)!important;font-weight:600!important;line-height:1.5!important}
+.sm{margin-top:3px!important;font-size:var(--pf-fs-caption)!important}
+.t{font-size:var(--pf-fs-h3)!important;line-height:1.3!important}
+.st{margin-top:4px!important;font-size:var(--pf-fs-body)!important;font-weight:600!important;color:var(--ink)!important}
+.ds{margin-top:3px!important;font-size:var(--pf-fs-caption)!important;color:var(--ink3)!important}
+.pn,.chev{height:482px!important}
+/* 이 장 전용 보정 (이전 빌드에서 옮겨 옴) */
+.slide .q,.slide .ds{font-size:var(--pf-fs-body)}
+.grid{margin-top:28px}
+</style>
+<section class="slide">
+  <div class="eyebrow">Problem Definition</div>
+  <h1>감정 기록은 쌓고 돌아볼 수 있지만, <em>다시 기록할 이유</em>로 이어지지 않습니다.</h1>
+  <p class="sub">선행 연구 3편에서 확인된 관찰을 <b>입력 · 축적 · 결과</b>로 묶었습니다.</p>
+
+  <div class="grid">
+    <div class="pn L">
+      <div class="ph">선행 연구에서 확인된 3가지 관찰</div>
+      <div class="rw"><div class="tg"><em>01</em>입력</div><div>
+        <div class="big">기록의 노력</div>
+        <p class="q">기록에는 노력이 들어, 동기가 떨어지거나 잊으면 그만둡니다.</p>
+        <p class="sm">18~25세 50명 정성 연구 (Beltzer, 2023)</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>02</em>축적</div><div>
+        <div class="big">흐름은 이미 볼 수 있음</div>
+        <p class="q">기록을 쌓아 그래프 · 달력으로 보여 주는 기능은 이미 많고, 사용자도 유용하게 여깁니다.</p>
+        <p class="sm">앱 32개 기능 분석 (Caldeira, 2017) · 인터뷰 22명 (Schueller, 2021)</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>03</em>결과</div><div>
+        <div class="big">확인 다음이 없음</div>
+        <p class="q">기록을 돌아본 뒤 다음으로 이어지는 결과나 행동은 부족합니다.</p>
+        <p class="sm">행동 단계 지원 부족 (Caldeira, 2017) · 해석 · 개선 제안 부족 (Schueller, 2021)</p>
+      </div></div>
+    </div>
+
+    <div class="chev"><i></i><i></i><i></i></div>
+
+    <div class="pn R">
+      <div class="ph">설계 방향</div>
+      <div class="rw"><div class="tg"><em>01</em>입력</div><div>
+        <div class="t">부담 없이 남기기</div>
+        <p class="st">단어 대신 위치로 고르고, 글은 한 문장으로 줄입니다.</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>02</em>축적</div><div>
+        <div class="t">쌓인 기록을 재료로</div>
+        <p class="st">기간별 흐름을 다음 결과물의 재료로 씁니다.</p>
+      </div></div>
+      <div class="rw"><div class="tg"><em>03</em>결과</div><div>
+        <div class="t">손에 남는 결과</div>
+        <p class="st">확인에서 끝내지 않고 작품 · 굿즈로 돌려줍니다.</p>
+      </div></div>
+    </div>
+  </div>
+  <div class="opp"><em>INSIGHT</em><span>계속 기록하게 하려면 부담을 낮추는 것만으로는 부족합니다. 기록한 뒤 <b>돌아올 이유</b>가 필요합니다.</span></div>
+</section>

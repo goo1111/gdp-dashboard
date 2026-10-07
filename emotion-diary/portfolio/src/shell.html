@@ -1,0 +1,20 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+:root{--bg:#efeef3;--ink:#2b2a33;--ink3:#6a6874}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1b21;--ink:#ecebf2;--ink3:#a9a7b4}}
+:root[data-theme="dark"]{--bg:#1c1b21;--ink:#ecebf2;--ink3:#a9a7b4}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,-apple-system,"Apple SD Gothic Neo",sans-serif}
+header{max-width:1440px;margin:0 auto;padding:32px 16px 8px}h1{font-size:22px;margin:0 0 4px}header p{margin:0;color:var(--ink3);font-size:14px}
+.s{max-width:1440px;margin:24px auto;padding:0 16px}.lbl{font-size:13px;color:var(--ink3);margin:0 0 8px;font-weight:600}
+.frame{position:relative;width:100%;aspect-ratio:1440/810;overflow:hidden;border-radius:12px;box-shadow:0 2px 16px rgba(0,0,0,.08);background:#fff}
+.frame iframe{position:absolute;left:0;top:0;width:1440px;height:810px;border:0;transform-origin:0 0}
+</style></head><body>
+<header>{{HEADER}}</header>
+{{SECTIONS}}
+
+
+<script>
+function fitAll(){document.querySelectorAll('.frame').forEach(fr=>{const s=fr.clientWidth/1440;fr.querySelector('iframe').style.transform='scale('+s+')';});}
+addEventListener('resize',fitAll);fitAll();
+</script></body></html>
